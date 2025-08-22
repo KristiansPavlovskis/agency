@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Influenca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #00273C;
+            overflow-x: hidden;
+        }
+
+        /* Subtle grain/noise overlay at 6% opacity */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.08;
+            background-image: url('images/nnnoise.svg');
+            background-position: center;
+            background-repeat: repeat;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 80px;
+            transition: all 0.3s ease;
+            background: transparent;
+            backdrop-filter: blur(0px);
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .header.scrolled {
+            background: rgba(0, 39, 60, 0.85);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation */
+        .nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        .logo {
+            position: absolute;
+            left: 80px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid #CAF4FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+
+        .logo svg {
+            width: 24px;
+            height: 24px;
+            stroke: #CAF4FF;
+            fill: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 60px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #CAF4FF;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 400;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            width: 100vw;
+            height: 80vh;
+            margin-left: calc(50% - 50vw);
+            padding: 280px 0 60px;
+            text-align: center;
+            background-image: linear-gradient(0deg, #00273C 0%, rgba(20, 28, 38, 0.6) 35%, rgba(20, 28, 38, 0.25) 60%, rgba(20, 28, 38, 0) 100%), url('images/fog-5302291.jpg');
+            background-size: cover;
+            background-position: center bottom;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .hero-description {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #ebebeb;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #002b42;
+            color: #fff;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #00273C;
+            transform: translateY(-2px);
+        }
+
+        .arrow-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-image { display: none; }
+
+        /* Partner Logos */
+        .partner-section {
+            padding: 40px 0;
+            background: #fff;
+        }
+
+        .partner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .partner-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #ccc;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .partner-icon {
+            width: 20px;
+            height: 20px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+
+        
+
+
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .contact-form {
+            background: #003857;
+            border: 1px solid #00273C;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Soft radial shine behind form content */
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            background: radial-gradient(circle at center,
+                rgba(202, 244, 255, 0.15) 0%,
+                rgba(202, 244, 255, 0.08) 35%,
+                rgba(202, 244, 255, 0.03) 60%,
+                rgba(202, 244, 255, 0) 75%
+            );
+            filter: blur(20px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .contact-form > * { position: relative; z-index: 1; }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid rgba(202, 244, 255, 0.2);
+            border-radius: 8px;
+            font-size: 16px;
+            background: rgba(0, 39, 60, 0.6);
+            color: #fff;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(202, 244, 255, 0.6);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(0, 39, 60, 0.8);
+            border-color: rgba(202, 244, 255, 0.5);
+            box-shadow: 0 0 0 3px rgba(202, 244, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background-image: linear-gradient(rgba(26, 35, 50, 0.55), rgba(26, 35, 50, 0.55)), url('images/ttten.svg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #00273C;
+            color: white;
+            padding: 18px 40px;
+            border: none;
+            font-size: 0.9rem;
+            font-family: inherit;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        .submit-btn:hover {
+            background-image: linear-gradient(rgba(36, 52, 71, 0.75), rgba(36, 52, 71, 0.75)), url('images/ttten.svg');
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Business Hours Section */
+        .hours-section {
+            background: #003857;
+            border: 1px solid #00273C;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Soft radial shine behind hours content */
+        .hours-section::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 400px;
+            height: 400px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            background: radial-gradient(circle at center,
+                rgba(202, 244, 255, 0.15) 0%,
+                rgba(202, 244, 255, 0.08) 35%,
+                rgba(202, 244, 255, 0.03) 60%,
+                rgba(202, 244, 255, 0) 75%
+            );
+            filter: blur(20px);
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .hours-section > * { position: relative; z-index: 1; }
+
+        .hours-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .hours-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hours-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(0, 39, 60, 0.6);
+            border: 1px solid rgba(202, 244, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .hours-item:hover {
+            transform: translateY(-2px);
+            background: rgba(0, 39, 60, 0.8);
+            border-color: rgba(202, 244, 255, 0.4);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .day {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .time {
+            color: rgba(202, 244, 255, 0.8);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .hours-item:last-child .time {
+            color: #ef4444;
+            font-weight: 600;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            /* full-bleed layout */
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 80px 0 120px;
+            margin-top: 20px;
+            position: relative;
+            /* Top transparent to bottom #141C26 gradient */
+            background-image: linear-gradient(180deg, rgba(20, 28, 38, 0) 0%, #141C26 100%);
+        }
+
+        .contact-details-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-card {
+            background: #003857;
+            border: 1px solid #00273C;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all 0.3s ease;
+            position: relative; /* needed for shine pseudo-elements */
+            overflow: hidden;
+        }
+
+        .contact-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Soft radial shine behind card content (agency-like glow) */
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 520px;
+            height: 520px;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            background: radial-gradient(circle at center,
+                rgba(202, 244, 255, 0.18) 0%,
+                rgba(202, 244, 255, 0.10) 35%,
+                rgba(202, 244, 255, 0.04) 60%,
+                rgba(202, 244, 255, 0) 75%
+            );
+            filter: blur(16px);
+            z-index: 0;
+            opacity: 0.75;
+            transition: opacity 0.35s ease, transform 0.45s ease;
+        }
+
+        /* Subtle angled sheen sweeping across */
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            inset: -30% -60% -30% -60%;
+            background: linear-gradient(120deg, transparent 30%, rgba(202, 244, 255, 0.08) 50%, transparent 70%);
+            transform: translateX(-30%);
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.55;
+            transition: transform 1.2s ease, opacity 0.4s ease;
+        }
+
+        .contact-card:hover::after {
+            transform: translateX(30%);
+            opacity: 0.75;
+        }
+
+        .contact-card > * { position: relative; z-index: 1; }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: #1e3a8a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 20px;
+        }
+
+        .contact-content h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+            text-transform: lowercase;
+        }
+
+        .contact-content p {
+            font-size: 0.95rem;
+            color: #fff;
+            line-height: 1.5;
+        }
+
+        /* Map Section */
+        .map-section {
+            margin-bottom: 80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .map-container {
+            position: relative;
+            height: 500px;
+            width: 1000px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+        }
+
+        .map-embed {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .map-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+        }
+
+        .map-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .map-address {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .map-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+
+        .stars {
+            color: #ffd700;
+        }
+
+        .rating-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .map-link {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .map-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 30px;
+            }
+            
+            .nav-links a {
+                font-size: 16px;
+            }
+            
+            .logo {
+                left: 50px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .logo svg {
+                width: 20px;
+                height: 20px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-decoration {
+                display: none;
+            }
+
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-details {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .partner-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .content-container {
+                padding: 0 20px;
+            }
+        }
+
+        /* ========== FOOTER ========== */
+        .site-footer {
+            background: #002b42;
+            color: #fff;
+            position: relative;
+        }
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px 30px 40px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+        .footer-title {
+            color: #fff;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+        .footer-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            color: #fff;
+        }
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            gap: 10px;
+        }
+        .footer-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            transition: opacity 0.2s ease;
+        }
+        .footer-links a:hover { opacity: 1; }
+
+        .newsletter-form {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .newsletter-input {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(0,0,0,0.2);
+            color: #fff;
+            padding: 12px 14px;
+            font-family: inherit;
+            outline: none;
+        }
+        .newsletter-btn {
+            background: #141C26;
+            color: #fff;
+            border: none;
+            padding: 12px 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 30px;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 1rem; 
+            color: #fff;
+        }
+        @media (max-width: 900px) {
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 600px) {
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 10px; }
+        }
+
+        /* Social links */
+        .social-links { display: flex; gap: 20px; margin-top: 40px; }
+        .social-link { width: 45px; height: 45px; background: #dc2626; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease; }
+        .social-link:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(220, 38, 38, 0.3); }
+        .social-link.instagram { background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d); }
+        .social-link.twitter { background: #1da1f2; }
+        .social-link svg { width: 20px; height: 20px; fill: white; }
+
+      
+         /* ========== WAVE ANIMATION ========== */
+        .map-section {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 80px 0; 
+            margin: 0;
+            /* Top-to-bottom gradient using #00273C */
+            background-image: linear-gradient(180deg, rgba(0, 39, 60, 0) 0%, #00273C 100%);
+        }
+        
+        .map-section .wave {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #002b42;
+            /* box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5); */
+            transition: 0.5s;
+            z-index: 1;
+        }
+        
+        .map-section .wave span {
+            content: "";
+            position: absolute;
+            width: 325vh;
+            height: 325vh;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            background: #000;
+        }
+        
+        .map-section .container {
+            position: relative;
+            z-index: 10;
+        }
+        
+        .map-section .wave span:nth-child(1) {
+            border-radius: 45%;
+            background: rgba(20, 28, 38, 1);
+            animation: animate 20s linear infinite;
+        }
+
+        .map-section .wave span:nth-child(2) {
+            border-radius: 40%;
+            background: rgba(20, 28, 38, 0.4);
+            animation: animate 30s linear infinite;
+        }
+        
+        .map-section .wave span:nth-child(3) {
+            border-radius: 42.5%;
+            background: rgba(20, 28, 38, 0.2);
+            animation: animate 40s linear infinite;
+        }
+        @keyframes animate {
+            0% {
+                transform: translate(-50%, -75%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -75%) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <!-- Logo -->
+        <div class="logo">
+            <svg viewBox="0 0 24 24" stroke-width="2">
+                <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
+            </svg>
+        </div>
+        
+        <!-- Navigation -->
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="agency.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Designing spaces, bringing ideas to life</h1>
+            <p class="hero-description">We are passionate about creating inspiring, attention-grabbing, and enduring spaces that adapt to innovation.</p>
+            <button class="cta-button">
+                Get started
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+        <div class="hero-image"></div>
+    </section>
+
+
+        <div class="content-container">
+            <!-- Contact Form Section -->
+            <section class="contact-section">
+                <div class="contact-form">
+                    <h2 class="form-title">Get in Touch</h2>
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <input type="text" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="form-group full-width">
+                            <textarea id="message" name="message" placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Submit Button</button>
+                    </form>
+                </div>
+
+                <div class="hours-section">
+                    <h2 class="hours-title">Business Hours</h2>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="day">Monday - Friday</span>
+                            <span class="time">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">10:00 AM - 4:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <!-- Contact Details -->
+            <section class="contact-details">
+                <div class="contact-details-container">
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-content">
+                            <h3>Phone</h3>
+                            <p>(+876) 765 665</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-content">
+                            <h3>Email</h3>
+                            <p>mail@influenca.id</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-content">
+                            <h3>Location</h3>
+                            <p>London Eye London</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <iframe 
+                class="map-embed"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.4004900120997!2d-0.1198240842296875!3d51.50332417963525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b51100724b5%3A0x19b9709b8c5b640f!2sLondon%20Eye!5e0!3m2!1sen!2suk!4v1640995200000!5m2!1sen!2suk&style=feature:all|element:geometry|color:0x242f3e|style=feature:all|element:labels.text.fill|color:0x746855|style=feature:all|element:labels.text.stroke|color:0x242f3e|style=feature:administrative.locality|element:labels.text.fill|color:0xd59563|style=feature:poi|element:labels.text.fill|color:0xd59563|style=feature:poi|element:labels.poi.background|color:0x242f3e|style=feature:poi.business|element:labels|visibility:off|style=feature:road|element:geometry|color:0x38414e|style=feature:road|element:geometry.stroke|color:0x212a37|style=feature:road|element:labels.text.fill|color:0x9ca5b3|style=feature:road.highway|element:geometry|color:0x746855|style=feature:road.highway|element:geometry.stroke|color:0x1f2835|style=feature:road.highway|element:labels.text.fill|color:0xf3d19c|style=feature:transit|element:geometry|color:0x2f3948|style=feature:transit.station|element:labels.text.fill|color:0xd59563|style=feature:water|element:geometry|color:0x17263c|style=feature:water|element:labels.text.fill|color:0x515c6d|style=feature:water|element:labels.text.stroke|color:0x17263c"
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            
+            <div class="map-overlay">
+                <div class="map-title">lastminute.com London Eye</div>
+                <div class="map-address">Riverside Building, County Hall, London SE1 7PB, UK</div>
+                <div class="map-rating">
+                    <span class="stars">★★★★☆</span>
+                    <span class="rating-text">4.5</span>
+                </div>
+                <a href="#" class="map-link">View larger map</a>
+            </div>
+        </div>    
+        
+        <!-- Wave Animation -->
+        <div class="wave">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+        
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">About Adkryv</div>
+                    <p class="footer-text">We scale brands with data-driven strategy, high-performance web experiences, and creative that converts. Let's build your next growth chapter.</p>
+                    <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input class="newsletter-input" type="email" placeholder="Your email" aria-label="Email"/>
+                        <button class="newsletter-btn" type="submit">Subscribe</button>
+                    </form>
+                </div>
+                <div>
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Contact</div>
+                    <div class="footer-text">
+                        <div>123456 Moscow</div>
+                        <div>Lane duzjhena</div>
+                        <div>building 47 office 202</div>
+                        <div style="margin-top:10px;">+371 23456789</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-title">Follow</div>
+                    <div class="social-links">
+                        <a href="#" class="social-link youtube">
+                            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="#" class="social-link instagram">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.617-6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© <span id="year"></span> Adkryv Agency. All rights reserved.</div>
+                <div>Privacy · Terms</div>
+            </div>
+        </div>
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
+
+    <script>
+        // Simple form handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+            });
+        });
+
+        // Sticky header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
