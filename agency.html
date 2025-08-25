@@ -1349,6 +1349,96 @@ body::before {
             right: 200px;
         }
 
+        /* ===== SERVICES CTA SECTION ===== */
+        .services-cta {
+            text-align: center;
+            max-width: 900px;
+            margin: 60px auto 0;
+            padding: 25px 40px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            position: relative;
+            z-index: 3;
+            transition: all 0.4s ease;
+        }
+
+        .services-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(212, 175, 55, 0.02) 100%);
+            border-radius: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .services-cta:hover::before {
+            opacity: 1;
+        }
+
+        .services-cta p {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #e8e8e8;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .services-cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: #00273C;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+            border: 2px solid transparent;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+        }
+
+        .services-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #e6c44a 0%, #d4af37 100%);
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .services-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .services-cta-button:hover::before {
+            opacity: 1;
+        }
+
+        .services-cta-button:active {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+        }
+
         .nav-arrow svg {
             width: 24px;
             height: 24px;
@@ -1452,6 +1542,25 @@ body::before {
 
             .nav-arrow.right {
                 right: 20px;
+            }
+
+            /* Mobile CTA styles */
+            .services-cta {
+                margin: 50px 20px 0;
+                padding: 20px 25px;
+                border-radius: 15px;
+            }
+
+            .services-cta p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin-bottom: 30px;
+            }
+
+            .services-cta-button {
+                padding: 16px 32px;
+                font-size: 1rem;
+                letter-spacing: 0.8px;
             }
         }
 
@@ -2197,6 +2306,11 @@ body::before {
                 <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"/>
             </svg>
         </div>
+    </div>
+    
+    <div class="services-cta">
+        <p>Ready to transform your digital presence? Our comprehensive suite of services is designed to elevate your brand and drive real results. From stunning web design to strategic marketing campaigns, we're here to turn your vision into reality.</p>
+        <a href="#services" class="services-cta-button">Explore Our Services</a>
     </div>
 </section>
 
