@@ -2126,7 +2126,7 @@ body::before {
       </defs>
       <text>
         <textPath href="#circle">
-          Design • Position • Scale • Design • Position • Scale •
+          Analytics • Ads • Web Dev • Social Media • Position • Scale • Pricing • 
         </textPath>
       </text>
     </svg>
@@ -2466,145 +2466,7 @@ document.querySelector('.cta-button').addEventListener('click', function() {
   }, 150);
 });
 
-// Add modern following dot cursor effect with adjustable shine
-let cursorDot = null;
-let cursorShine = null;
-let mouseX = 0;
-let mouseY = 0;
-let dotX = 0;
-let dotY = 0;
-
-// Shine size (adjustable)
-let shineWidth = 220;  // default width of the shine/halo
-let shineHeight = 220; // default height of the shine/halo
-
-// Create the following dot and shine
-function createCursorElements() {
-  if (!cursorShine) {
-    cursorShine = document.createElement('div');
-    cursorShine.style.position = 'fixed';
-    cursorShine.style.width = shineWidth + 'px';
-    cursorShine.style.height = shineHeight + 'px';
-    cursorShine.style.pointerEvents = 'none';
-    cursorShine.style.borderRadius = '50%';
-    cursorShine.style.transform = 'translate(-50%, -50%)';
-    cursorShine.style.zIndex = '1000';
-    cursorShine.style.background = 'radial-gradient(ellipse at center, rgba(202, 244, 255, 0.35) 0%, rgba(202, 244, 255, 0.18) 40%, rgba(202, 244, 255, 0.08) 65%, rgba(202, 244, 255, 0) 80%)';
-    cursorShine.style.filter = 'blur(12px)';
-    cursorShine.style.transition = 'width 0.2s ease, height 0.2s ease, opacity 0.2s ease';
-    document.body.appendChild(cursorShine);
-  }
-
-  if (!cursorDot) {
-    cursorDot = document.createElement('div');
-    cursorDot.style.position = 'fixed';
-    cursorDot.style.width = '20px';
-    cursorDot.style.height = '20px';
-    cursorDot.style.background = 'rgba(202, 244, 255, 0.9)';
-    cursorDot.style.borderRadius = '50%';
-    cursorDot.style.pointerEvents = 'none';
-    cursorDot.style.zIndex = '1001';
-    cursorDot.style.transform = 'translate(-50%, -50%)';
-    cursorDot.style.boxShadow = '0 0 25px rgba(202, 244, 255, 0.8), 0 0 60px rgba(202, 244, 255, 0.4)';
-    document.body.appendChild(cursorDot);
-  }
-}
-
-// Expose a helper to manually adjust shine size
-window.setCursorShineSize = function(width, height) {
-  shineWidth = Math.max(0, Number(width) || 0);
-  shineHeight = Math.max(0, Number(height) || 0);
-  if (cursorShine) {
-    cursorShine.style.width = shineWidth + 'px';
-    cursorShine.style.height = shineHeight + 'px';
-  }
-};
-
-// Update mouse position
-document.addEventListener('mousemove', function(e) {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-});
-
-// Animate the dot with lag
-function animateDot() {
-  if (!cursorDot || !cursorShine) {
-    createCursorElements();
-  }
-  
-  // Smooth following with lag
-  dotX += (mouseX - dotX) * 0.1;
-  dotY += (mouseY - dotY) * 0.1;
-  
-  if (cursorShine) {
-    cursorShine.style.left = dotX + 'px';
-    cursorShine.style.top = dotY + 'px';
-  }
-  if (cursorDot) {
-    cursorDot.style.left = dotX + 'px';
-    cursorDot.style.top = dotY + 'px';
-  }
-  
-  // Check for hidden element reveals
-  checkHiddenElementReveal();
-  
-  requestAnimationFrame(animateDot);
-}
-
-// Start the animation
-animateDot();
-
-// Hidden element reveal logic
-function checkHiddenElementReveal() {
-  if (!cursorShine) return;
-  
-  const hiddenElements = document.querySelectorAll('.hidden-element');
-  const aboutContainer = document.querySelector('.about-container');
-  
-  if (!aboutContainer) return;
-  
-  const containerRect = aboutContainer.getBoundingClientRect();
-  const shineRect = {
-    left: dotX - shineWidth / 2,
-    right: dotX + shineWidth / 2,
-    top: dotY - shineHeight / 2,
-    bottom: dotY + shineHeight / 2
-  };
-  
-  hiddenElements.forEach(element => {
-    const elementRect = element.getBoundingClientRect();
-    
-    // Check if cursor shine overlaps with the element
-    const isOverlapping = !(
-      shineRect.left > elementRect.right ||
-      shineRect.right < elementRect.left ||
-      shineRect.top > elementRect.bottom ||
-      shineRect.bottom < elementRect.top
-    );
-    
-    if (isOverlapping) {
-      element.classList.add('revealed');
-    } else {
-      // Add a delay before hiding to make it feel more natural
-      setTimeout(() => {
-        if (!element.matches(':hover') && !isCursorOverElement(element, shineRect)) {
-          element.classList.remove('revealed');
-        }
-      }, 300);
-    }
-  });
-}
-
-// Helper function to check if cursor is still over an element
-function isCursorOverElement(element, shineRect) {
-  const elementRect = element.getBoundingClientRect();
-  return !(
-    shineRect.left > elementRect.right ||
-    shineRect.right < elementRect.left ||
-    shineRect.top > elementRect.bottom ||
-    shineRect.bottom < elementRect.top
-  );
-}
+// Cursor shine effect is now loaded from cursor-shine.js
 
 
 
@@ -2866,5 +2728,8 @@ let currentIndex = 0;
         })();
         
 </script>
+
+<!-- Global Cursor Shine Effect -->
+<script src="cursor-shine.js"></script>
 </body>
 </html>
