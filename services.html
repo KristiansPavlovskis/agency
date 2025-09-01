@@ -120,7 +120,7 @@
           position: relative;
           width: 100vw;
           height: 100vh;
-          background-image: url('images/hero.jpg');
+          background-image: url('images/ahmet-yuksek-1E3gWJFOXms-unsplash.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -416,22 +416,19 @@
         .supply-blocks {
             display: flex;
             flex-direction: column;
-            gap: 30px;
             margin-top: 40px;
         }
 
         .supply-block {
-            background: rgba(202, 244, 255, 0.05);
-            border: 1px solid rgba(202, 244, 255, 0.1);
+            /* border: 1px solid rgba(202, 244, 255, 0.1); */
             border-radius: 8px;
             padding: 25px;
             transition: all 0.3s ease;
         }
 
-        .supply-block:hover {
-            background: rgba(202, 244, 255, 0.08);
-            border-color: rgba(202, 244, 255, 0.2);
+        .supply-block:hover { 
             transform: translateY(-2px);
+            transform: scale(1.07);
         }
 
         .supply-title {
@@ -1069,29 +1066,37 @@
                 font-size: 1.2rem;
             }
         }
+
+        /* Mechanical Divider Styles */
+        .mech-divider {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mech-divider .shine {
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #CAF4FF, transparent);
+            opacity: 0.6;
+        }
+
+        .mech-divider .node {
+            width: 8px;
+            height: 8px;
+            background: #CAF4FF;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(202, 244, 255, 0.5);
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <!-- Logo -->
-        <div class="logo">
-            <svg viewBox="0 0 24 24" stroke-width="2">
-                <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
-            </svg>
-        </div>
-        
-        <!-- Navigation -->
-        <nav class="nav">
-            <ul class="nav-links">
-                <li><a href="agency.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-
+ 
     <!-- Hero Container -->
     <div class="hero-container">
       <div class="overlay"></div>
@@ -1126,24 +1131,25 @@
         </div>
         <h2 class="main-heading">Our Services</h2>
         <div class="cta-row">
-          <button class="cta-button">Get started</button>
-        </div>
+            <button class="cta-button">Get in touch</button>
+          </div>
       </div>
       
-      <!-- Circular Text -->
-      <div class="circular-text">
-        <svg>
-          <defs>
-            <path id="circle" d="M 60, 60 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
-          </defs>
-          <text>
-            <textPath href="#circle">
-              Analytics • Ads • Web Dev • Social Media • Position • Scale • Pricing • 
-            </textPath>
-          </text>
-        </svg>
-      </div>
-      
+
+       <!-- Circular Text -->
+  <div class="circular-text">
+    <svg>
+      <defs>
+        <path id="circle" d="M 60, 60 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
+      </defs>
+      <text>
+        <textPath href="#circle">
+          Analytics • Ads • Web Dev • Social Media • Position • Scale • Pricing • 
+        </textPath>
+      </text>
+    </svg>
+  </div>
+     
       <!-- Scroll Indicator -->
       <div class="scroll-indicator">
         <div class="scroll-text">scroll down</div>
@@ -1260,17 +1266,29 @@
                                 <div class="supply-title">We Supply</div>
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title">We Supply</div>
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title">We Supply</div>
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title">We Supply</div>
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
@@ -1313,17 +1331,29 @@
                                 <div class="supply-title supply-title-centered">We Supply</div>
                                 <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title supply-title-centered">We Supply</div>
                                 <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title supply-title-centered">We Supply</div>
                                 <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
-
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
                             <div class="supply-block">
                                 <div class="supply-title supply-title-centered">We Supply</div>
                                 <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
@@ -1374,14 +1404,32 @@
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                             </div>
 
-                            <div class="supply-block">
-                                <div class="supply-title">We Supply</div>
-                                <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                            <!-- Simple Mechanical Divider -->
+                            <div class="mech-divider" aria-hidden="true">
+                                <div class="shine"></div>
+                                <div class="node"></div>
                             </div>
 
                             <div class="supply-block">
                                 <div class="supply-title">We Supply</div>
                                 <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                            </div>
+
+                            <!-- Simple Mechanical Divider -->
+                            <div class="mech-divider" aria-hidden="true">
+                                <div class="shine"></div>
+                                <div class="node"></div>
+                            </div>
+
+                            <div class="supply-block">
+                                <div class="supply-title">We Supply</div>
+                                <p class="supply-text">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                            </div>
+
+                            <!-- Simple Mechanical Divider -->
+                            <div class="mech-divider" aria-hidden="true">
+                                <div class="shine"></div>
+                                <div class="node"></div>
                             </div>
 
                             <div class="supply-block">
@@ -1431,14 +1479,32 @@
                             <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
                         </div>
 
-                        <div class="supply-block">
-                            <div class="supply-title supply-title-centered">We Supply</div>
-                            <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
                         </div>
 
                         <div class="supply-block">
                             <div class="supply-title supply-title-centered">We Supply</div>
                             <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                        </div>
+
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
+                        </div>
+
+                        <div class="supply-block">
+                            <div class="supply-title supply-title-centered">We Supply</div>
+                            <p class="supply-text-centered">Our core business in distribution of timber floor, SPC floor - composite decking. We are exclusive distributors of famous engineered timeless floor, pasadena SPC.</p>
+                        </div>
+
+                        <!-- Simple Mechanical Divider -->
+                        <div class="mech-divider" aria-hidden="true">
+                            <div class="shine"></div>
+                            <div class="node"></div>
                         </div>
 
                         <div class="supply-block">

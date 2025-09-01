@@ -115,69 +115,181 @@
             padding: 0 20px;
         }
 
-        /* Hero Section */
-        .hero-section {
-            width: 100vw;
-            height: 90vh;
-            margin-left: calc(50% - 50vw);
-            padding: 280px 0 60px;
-            text-align: center;
-            background-image: linear-gradient(0deg, #00273C 0%, rgba(20, 28, 38, 0.6) 35%, rgba(20, 28, 38, 0.25) 60%, rgba(20, 28, 38, 0) 100%), url('images/ahmet-yuksek-1E3gWJFOXms-unsplash.png');
-            background-size: cover;
-            background-position: center bottom;
-            background-repeat: no-repeat;
+        /* ========== HERO SECTION ========== */
+        .hero-container {
+          position: relative;
+          width: 100vw;
+          height: 100vh;
+          background-image: url('images/jony-y-nOmLeouETaY-unsplash.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto 60px;
+        .overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            180deg,
+            rgba(0, 39, 60, 0) 0%,
+            rgba(0, 39, 60, 0.6) 70%,
+            #00273C 100%
+          );
         }
 
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 30px;
-            color: #fff;
+        /* Main content */
+        .content {
+          position: relative;
+          text-align: center;
+          z-index: 5;
+          color: #CAF4FF;
+          max-width: 800px;
+          width: 100%;
+          padding: 0 40px;
         }
 
-        .hero-description {
-            font-size: 1.25rem;
-            font-weight: 400;
-            color: #ebebeb;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        .content-sub {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin-bottom: 50px;
+        }
+
+        .agency-title {
+          font-size: 48px;
+          font-weight: 400;
+          letter-spacing: 1px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+        }
+
+        .agency-title-sub {
+          font-size: 16px;
+          font-weight: 400;
+          opacity: 0.9;
+          letter-spacing: 2px;
+          color: #F8CD40;
+          margin-top: 8px;
+        }
+
+        .main-heading {
+          font-size: 90px;
+          font-weight: 400;
+          line-height: 1.2;
+          margin-bottom: 50px;
+          letter-spacing: -1px;
         }
 
         .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: #002b42;
-            color: #fff;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+          background: rgba(202, 244, 255, 0.1);
+          color: #CAF4FF;
+          padding: 10px 25px;
+          font-size: 20px;
+          font-family: 'Libre Caslon Display', serif;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          border-radius: 14px;
+          border: none;
+          align-self: flex-end;
         }
 
         .cta-button:hover {
-            background: #00273C;
-            transform: translateY(-2px);
+          background: rgba(202, 244, 255, 0.2);
+          transform: translateY(-2px);
         }
 
-        .arrow-icon {
-            width: 16px;
-            height: 16px;
+        /* CTA alignment row (places button on the right under the heading) */
+        .cta-row {
+          width: 100%;
+          display: flex;
+          justify-content: flex-end;
+          margin-top: 20px;
         }
 
-        .hero-image { display: none; }
+        /* Left side circular text */
+        .circular-text {
+          position: absolute;
+          left: 120px;
+          top: 60%;
+          width: 120px;
+          height: 120px;
+          z-index: 5;
+        }
+
+        .circular-text svg {
+          width: 120px;
+          height: 120px;
+          animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+
+        .circular-text text {
+          fill: #CAF4FF;
+          font-size: 12px;
+          font-family: 'Libre Caslon Display', serif;
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+          position: absolute;
+          bottom: 50px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 5;
+          text-align: center;
+        }
+
+        .scroll-text {
+          color: #CAF4FF;
+          font-size: 14px;
+          margin-bottom: 20px;
+          opacity: 0.8;
+        }
+
+        .scroll-arrow {
+          width: 2px;
+          height: 40px;
+          background: #CAF4FF;
+          margin: 0 auto;
+          position: relative;
+          animation: bounce 2s infinite;
+        }
+
+        .scroll-arrow::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 0;
+          height: 0;
+          border-left: 6px solid transparent;
+          border-right: 6px solid transparent;
+          border-top: 10px solid #CAF4FF;
+        }
+
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-10px); }
+          60% { transform: translateY(-5px); }
+        }
 
         /* Content Section */
         .content-section {
@@ -769,42 +881,68 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
+
+    <!-- Hero Container -->
+    <div class="hero-container">
+      <div class="overlay"></div>
+      
+      <!-- Header -->
+      <header class="header">
         <!-- Logo -->
         <div class="logo">
-            <svg viewBox="0 0 24 24" stroke-width="2">
-                <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
-            </svg>
+          <svg viewBox="0 0 24 24" stroke-width="2">
+            <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
+          </svg>
         </div>
         
         <!-- Navigation -->
         <nav class="nav">
-            <ul class="nav-links">
-                <li><a href="agency.html">Home</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+          <ul class="nav-links">
+            <li><a href="agency.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
+      </header>
+
+      <!-- Main Content -->
+      <div class="content">
+        <div class="content-sub">
+          <h1 class="agency-title">
+            Explore
+            <span class="agency-title-sub">- the story behind Adkryv</span>
+          </h1>
+        </div>
+        <h2 class="main-heading">About us</h2>
+        <div class="cta-row">
+            <a href="contact.html" class="cta-button">Get in touch</a>
+          </div>
+      </div>
+      
+
+       <!-- Circular Text -->
+        <div class="circular-text">
+            <svg>
+            <defs>
+                <path id="circle" d="M 60, 60 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"/>
+            </defs>
+            <text>
+                <textPath href="#circle">
+                Analytics • Ads • Web Dev • Social Media • Position • Scale • Pricing • 
+                </textPath>
+            </text>
+            </svg>
+        </div>
+     
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">
+        <div class="scroll-text">scroll down</div>
+        <div class="scroll-arrow"></div>
+      </div>
+    </div>
 
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1 class="hero-title">About Us</h1>
-                <p class="hero-description">Learn about our team, mission, and the passion that drives us to create exceptional design experiences.</p>
-                <button class="cta-button">
-                    Get started
-                    <svg class="arrow-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="hero-image"></div>
-        </section>
-
         <!-- Content Section -->
         <section class="content-section">
             <!-- Our Mission Section -->
