@@ -1003,13 +1003,11 @@
             <section class="contact-section">
                 <div class="contact-form">
                     <h2 class="form-title">Get in Touch</h2>
-                    <form>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="ac1712d9-a657-4749-aac4-25d32a76f7ea">
                         <div class="form-row">
                             <div class="form-group">
                                 <input type="email" id="email" name="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" placeholder="Phone">
                             </div>
                         </div>
                         <div class="form-group full-width">
@@ -1018,6 +1016,10 @@
                         <div class="form-group full-width">
                             <textarea id="message" name="message" placeholder="Message" required></textarea>
                         </div>
+                    
+                        <!-- Honeypot Spam Protection -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
                         <button type="submit" class="submit-btn">Submit Button</button>
                     </form>
                 </div>
