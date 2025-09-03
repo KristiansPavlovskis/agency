@@ -204,6 +204,8 @@
           border-radius: 14px;
           border: none;
           align-self: flex-end;
+          text-decoration: none;
+          display: inline-block;
         }
 
         .cta-button:hover {
@@ -1093,6 +1095,56 @@
             box-shadow: 0 0 10px rgba(202, 244, 255, 0.5);
             z-index: 1;
         }
+
+        /* Sustainability Section */
+        .sustainability-section {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            padding: 80px 0 60px;
+            margin-top: 20px;
+            position: relative; 
+        }
+
+        .sustainability-grid { 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .sustainability-label {
+            font-size: 0.85rem;
+            color: #ffffff;
+            letter-spacing: 0.2px;
+        }
+
+        .sustainability-text {
+            font-size: 1.25rem;
+            line-height: 1.9;
+            color: #fff;
+            max-width: 1200px;
+            margin-bottom: 22px;
+        }
+
+        .pill-button {
+            display: inline-block;
+            background: #002b42;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 9999px;
+            font-size: 0.9rem;
+            transition: background 0.25s ease, transform 0.2s ease;
+        }
+
+        .pill-button:hover {
+            background: #00273C;
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 <body>
@@ -1113,7 +1165,7 @@
         <!-- Navigation -->
         <nav class="nav">
           <ul class="nav-links">
-            <li><a href="agency.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact Us</a></li>
@@ -1131,7 +1183,7 @@
         </div>
         <h2 class="main-heading">Our Services</h2>
         <div class="cta-row">
-            <button class="cta-button">Get in touch</button>
+            <a href="contact.html" class="cta-button">Get in touch</a>
           </div>
       </div>
       
@@ -1159,73 +1211,18 @@
 
     <div class="container">
 
-        <section class="why-choose-section">
-            <div class="why-choose-container">
-                <div class="why-choose-grid">
-                    <!-- Left Column -->
-                    <div class="left-column">
-                        <!-- Top Row - 2 columns -->
-                        <div class="top-row">
-                            <div class="info-panel">
-                                <div class="panel-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="panel-content">
-                                    <h3 class="panel-title">End-to-End Solutions</h3>
-                                    <p class="panel-description">We manage every aspect of your digital marketing project, saving you time and resources.</p>
-                                </div>
-                            </div>
-                            <div class="info-panel">
-                                <div class="panel-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="panel-content">
-                                    <h3 class="panel-title">After-Sales Support</h3>
-                                    <p class="panel-description">We are committed to providing ongoing support & after-sales service to address any future needs or concerns.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Bottom Row - 1 column -->
-                        <div class="bottom-row">
-                            <div class="info-panel dark">
-                                <div class="panel-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
-                                    </svg>
-                                </div>
-                                <div class="panel-content">
-                                    <h3 class="panel-title">No Variety Restrictions</h3>
-                                    <p class="panel-description">We partner with any vendor meeting our quality standards, providing the broadest selection of digital solutions to suit your needs and preferences.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Column - Single tall div -->
-                    <div class="right-column">
-                        <div class="text-panel dark">
-                            <div class="panel-icon">
-                                <svg viewBox="0 0 24 24">
-                                    <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
-                                </svg>
-                            </div>
-                            <div class="text-panel-content">
-                                <h3 class="panel-title">Bespoke Solutions</h3>
-                                <p class="panel-description">We specialize in creating custom digital solutions that perfectly match your unique vision and requirements.</p>
-                                <br><br><br><br>
-                                <h3 class="panel-title">Innovation & Quality</h3>
-                                <p class="panel-description">Our commitment to innovation and quality ensures that every solution we deliver exceeds expectations and drives real results.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!-- Bottom Sustainability Section -->
+        <section class="sustainability-section">
+            <div class="sustainability-grid"> 
+                <p class="sustainability-text">We are aware of the impact that the building sector has and the work that needs to be done on a global scale to reduce this. As a manufacturer we hold an important role and can directly affect the makeup of our products as well as expectations of our peers. Ensuring that we are continually looking to improve our environmental, social, and economic sustainable activities is beneficial for not just us, but for future generations. Change starts with us.</p>
             </div>
         </section>
 
+                    <!-- Simple Mechanical Divider -->
+                    <div class="mech-divider" aria-hidden="true">
+                        <div class="shine"></div>
+                        <div class="node"></div>
+                    </div>
 
         <!-- Services Section -->
         <section class="services-section">
@@ -1524,59 +1521,57 @@
         </div>
     </section>
 
-
-<footer class="site-footer">
-  <div class="footer-container">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-title">About Adkryv</div>
-        <p class="footer-text">We scale brands with data-driven strategy, high-performance web experiences, and creative that converts. Let's build your next growth chapter.</p>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input class="newsletter-input" type="email" placeholder="Your email" aria-label="Email"/>
-          <button class="newsletter-btn" type="submit">Subscribe</button>
-        </form>
-      </div>
-      <div>
-        <div class="footer-title">Quick Links</div>
-        <ul class="footer-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-title">Contact</div>
-        <div class="footer-text">
-          <div>123456 Moscow</div>
-          <div>Lane duzjhena</div>
-          <div>building 47 office 202</div>
-          <div style="margin-top:10px;">+371 23456789</div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-title">About Adkryv</div>
+                    <p class="footer-text">We scale brands with data-driven strategy, high-performance web experiences, and creative that converts. Let's build your next growth chapter.</p>
+                    <!-- <form class="newsletter-form" onsubmit="event.preventDefault();">
+                        <input class="newsletter-input" type="email" placeholder="Your email" aria-label="Email"/>
+                        <button class="newsletter-btn" type="submit">Subscribe</button>
+                    </form> -->
+                </div>
+                <div>
+                    <div class="footer-title">Quick Links</div>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="footer-title">Contact</div>
+                    <div class="footer-text">
+                        <div>Buncrana, swilly road</div>
+                        <div>adkryv@gmail.com</div>
+                        <div style="margin-top:10px;">(+353) 87 262 9655</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="footer-title">Follow</div>
+                    <div class="social-links">
+                        <a href="#" class="social-link youtube">
+                            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        </a>
+                        <a href="#" class="social-link instagram">
+                            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.617-6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                        <a href="#" class="social-link twitter">
+                            <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© <span id="year"></span> Adkryv Agency. All rights reserved.</div>
+                <div>Privacy Policy · Terms & Conditions</div>
+            </div>
         </div>
-      </div>
-      <div>
-        <div class="footer-title">Follow</div>
-        <div class="social-links">
-          <a href="#" class="social-link youtube">
-            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-          </a>
-          <a href="#" class="social-link instagram">
-            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="#" class="social-link twitter">
-            <svg viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© <span id="year"></span> Adkryv Agency. All rights reserved.</div>
-      <div>Privacy · Terms</div>
-    </div>
-  </div>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-</footer>
-  
+        <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    </footer>
 
     <script>
     // Sticky header scroll effect
