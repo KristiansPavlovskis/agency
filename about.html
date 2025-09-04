@@ -847,38 +847,384 @@
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
+        /* ========== RESPONSIVE DESIGN ========== */
+        
+        /* Laptop/Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            .nav-links {
+                gap: 60px;
             }
+            
+            .nav-links a {
+                font-size: 18px;
+            }
+            
+            .agency-title {
+                font-size: 48px;
+            }
+            
+            .main-heading {
+                font-size: 90px;
+            }
+            
+            .content {
+                max-width: 800px;
+                padding: 0 40px;
+            }
+        }
 
+        /* Tablet (768px to 1023px) */
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .header {
+                padding: 20px 40px;
+            }
+            
+            .logo {
+                left: 40px;
+            }
+            
+            .nav-links {
+                gap: 40px;
+            }
+            
+            .nav-links a {
+                font-size: 16px;
+            }
+            
+            .agency-title {
+                font-size: 36px;
+            }
+            
+            .agency-title-sub {
+                font-size: 14px;
+            }
+            
+            .main-heading {
+                font-size: 64px;
+            }
+            
+            .content {
+                max-width: 600px;
+                padding: 0 30px;
+            }
+            
             .content-grid {
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
-
+            
             .purpose-title {
                 font-size: 2rem;
             }
-
+            
             .feature-card {
-                padding: 20px;
+                padding: 25px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 2fr 1fr 1fr 1fr;
             }
         }
 
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
+        /* Mobile (up to 767px) */
+        @media (max-width: 767px) {
+            .header {
+                padding: 15px 20px;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
+            
+
+            .cta-row {
+                justify-content: center;
             }
 
-            .hero-description {
+            .logo {
+                left: 20px;
+                width: 35px;
+                height: 35px;
+            }
+            
+            .logo svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .nav-links {
+                gap: 25px;
+            }
+            
+            .nav-links a {
+                font-size: 14px;
+            }
+            
+            .agency-title {
+                font-size: 28px;
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .agency-title-sub {
+                font-size: 16px;
+                margin-top: 0;
+            }
+            
+            .main-heading {
+                font-size: 62px;
+                margin-bottom: 30px;
+            }
+            
+            .content {
+                max-width: 100%;
+                padding: 0 20px;
+            }
+            
+            .content-sub {
+                margin-bottom: 30px;
+                justify-content: center;
+            }
+
+            .agency-title {
+                font-size: 30px;
+            }
+            
+            /* Hide circular text on mobile */
+            .circular-text {
+                display: none;
+            }
+            
+            /* Hide mechanical dividers on mobile */
+            .mech-divider {
+                display: none;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .purpose-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .sustainability-section {
+                padding: 60px 0 80px;
+            }
+            
+            .sustainability-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding: 0 20px;
+            }
+            
+            .sustainability-text {
                 font-size: 1.1rem;
+                line-height: 1.7;
+            }
+            
+            .faq-section {
+                padding: 80px 20px;
+            }
+            
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 60px 20px 80px;
+            }
+            
+            .faq-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .footer-container {
+                padding: 40px 20px 20px 20px;
+                text-align: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+                margin-top: 20px;
+            }
+            
+            .footer-title {
+                text-align: center;
+            }
+            
+            .footer-text {
+                text-align: center;
+            }
+            
+            .footer-links {
+                text-align: center;
             }
 
-            .container {
+            .hero-container {
+                height: 70vh;
+            }
+        }
+
+        /* Small Mobile (up to 480px) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 10px 15px;
+                padding-top: 25px;
+                padding-bottom: 25px;
+            }
+            
+            .logo {
+                left: 15px;
+                width: 30px;
+                height: 30px;
+            }
+            
+            .logo svg {
+                width: 16px;
+                height: 16px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .nav-links a {
+                font-size: 13px;
+            }
+            
+            .content {
                 padding: 0 15px;
             }
+            
+            .agency-title {
+                font-size: 24px;
+            }
+            
+            .main-heading {
+                font-size: 48px;
+            }
+            
+            .content-grid {
+                gap: 30px;
+            }
+            
+            .purpose-title {
+                font-size: 1.5rem;
+            }
+            
+            .feature-card {
+                padding: 15px;
+            }
+            
+            .sustainability-grid {
+                padding: 0 10px;
+            }
+            
+            .sustainability-text {
+                font-size: 1rem;
+            }
+            
+            .faq-grid {
+                padding: 40px 15px 60px;
+            }
+            
+            .faq-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-container {
+                padding: 30px 15px 15px 15px;
+            }
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 39, 60, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-nav.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .mobile-nav-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 0 40px;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .mobile-nav-links a {
+            color: #CAF4FF;
+            text-decoration: none;
+            font-size: 32px;
+            font-weight: 400;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 15px 0;
+        }
+
+        .mobile-nav-links a:hover {
+            color: #F8CD40;
+            transform: translateY(-2px);
+        }
+
+        /* Mobile Logo */
+        .mobile-logo {
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            border: 2px solid #CAF4FF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .mobile-logo svg {
+            width: 30px;
+            height: 30px;
+            stroke: #CAF4FF;
+            fill: none;
         }
     </style>
 </head>
@@ -897,16 +1243,33 @@
           </svg>
         </div>
         
-        <!-- Navigation -->
-        <nav class="nav">
-          <ul class="nav-links">
+          <!-- Navigation -->
+          <nav class="nav" id="nav">
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+      </header>
+
+      <!-- Mobile Navigation -->
+      <div class="mobile-nav" id="mobile-nav">
+        <div class="mobile-logo">
+          <svg viewBox="0 0 24 24" stroke-width="2">
+            <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
+          </svg>
+        </div>
+        <div class="mobile-nav-content">
+          <ul class="mobile-nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </nav>
-      </header>
+          </ul>
+        </div>
+      </div>
 
       <!-- Main Content -->
       <div class="content">
@@ -1312,6 +1675,7 @@
             });
         });
     })();
+
     </script>
 
     <!-- Global Cursor Shine Effect -->

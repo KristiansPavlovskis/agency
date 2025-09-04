@@ -1232,41 +1232,6 @@
             }
         }
         
-        /* Hamburger Menu */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
-            z-index: 1001;
-            position: absolute;
-            right: 40px;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 10px;
-        }
-
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: #CAF4FF;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* Hamburger Animation */
-        .hamburger.active span:nth-child(1) {
-            transform: rotate(45deg) translate(8px, 8px);
-        }
-
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .hamburger.active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -7px);
-        }
-
         /* Mobile Navigation */
         .mobile-nav {
             display: none;
@@ -1357,12 +1322,6 @@
             <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
           </svg>
         </div>
-        
-        <div class="hamburger" id="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
         
           <!-- Navigation -->
           <nav class="nav" id="nav">
