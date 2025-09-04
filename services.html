@@ -462,6 +462,16 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1100px) {
+            .service-image-container::before {
+                content: none;
+            }
+
+            .service-image-container.tall::before {
+                content: none;
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -481,7 +491,7 @@
             }
 
             .service-image-container.tall {
-                height: 400px;
+                display: none;
             }
         }
 
@@ -499,6 +509,68 @@
             }
         }
 
+
+        /* ========== RESPONSIVE DESIGN (copied from about.html for hero) ========== */
+        /* Laptop/Desktop (1024px and up) */
+        @media (min-width: 1024px) {
+            .nav-links { gap: 60px; }
+            .nav-links a { font-size: 18px; }
+            .agency-title { font-size: 48px; }
+            .main-heading { font-size: 90px; }
+            .content { max-width: 800px; padding: 0 40px; }
+        }
+
+        /* Tablet (768px to 1023px) */
+        @media (max-width: 1023px) and (min-width: 768px) {
+            .header { padding: 20px 40px; }
+            .logo { left: 40px; }
+            .nav-links { gap: 40px; }
+            .nav-links a { font-size: 16px; }
+            .agency-title { font-size: 36px; }
+            .agency-title-sub { font-size: 14px; }
+            .main-heading { font-size: 64px; }
+            .content { max-width: 600px; padding: 0 30px; }
+        }
+
+        /* Mobile (up to 767px) */
+        @media (max-width: 767px) {
+            .header { padding: 15px 20px; padding-top: 30px; padding-bottom: 30px; }
+            .cta-row { justify-content: center; }
+            .logo { left: 20px; width: 35px; height: 35px; }
+            .logo svg { width: 18px; height: 18px; }
+            .nav-links { gap: 25px; }
+            .nav-links a { font-size: 14px; }
+            .agency-title { font-size: 28px; flex-direction: column; gap: 8px; }
+            .agency-title-sub { font-size: 16px; margin-top: 0; }
+            .main-heading { font-size: 62px; margin-bottom: 30px; }
+            .content { max-width: 100%; padding: 0 20px; }
+            .content-sub { margin-bottom: 30px; justify-content: center; }
+            .circular-text { display: none; }
+            .mech-divider { display: none; }
+            .hero-container { height: 70vh; }
+
+            /* Footer: match about.html mobile layout */
+            .footer-container { padding: 40px 20px 20px 20px; text-align: center; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .social-links { justify-content: center; margin-top: 20px; }
+            .footer-title { text-align: center; }
+            .footer-text { text-align: center; }
+            .footer-links { text-align: center; }
+        }
+
+        /* Small Mobile (up to 480px) */
+        @media (max-width: 480px) {
+            .header { padding: 10px 15px; padding-top: 25px; padding-bottom: 25px; }
+            .logo { left: 15px; width: 30px; height: 30px; }
+            .logo svg { width: 16px; height: 16px; }
+            .nav-links { gap: 20px; }
+            .nav-links a { font-size: 13px; }
+            .content { padding: 0 15px; }
+            .agency-title { font-size: 24px; }
+            .main-heading { font-size: 48px; }
+            .footer-container { padding: 30px 15px 15px 15px; }
+        }
 
 
 
