@@ -43,6 +43,12 @@ body {
   background: #00273C;
 }
 
+html, body {
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+  touch-action: pan-y;
+}
+
 /* Subtle grain/noise overlay at 6% opacity */
 body::before {
   content: '';
@@ -531,7 +537,7 @@ body::before {
   left: 50%;
   transform: translateX(-50%);
   bottom: -1px;
-  width: 100vw;
+  width: 100%;
   height: calc(25vh + 300px);
   pointer-events: none;
   z-index: 1;
@@ -2215,7 +2221,7 @@ body::before {
   .content { max-width: 100%; padding: 0 20px; }
   .content-sub { margin-bottom: 30px; justify-content: center; }
   .circular-text { display: none; }
-  .hero-container { height: 70vh; }
+  .hero-container { height: 70vh; width: 100%; }
 }
 
 /* Small Mobile (up to 480px) */
