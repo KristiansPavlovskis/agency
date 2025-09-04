@@ -258,6 +258,12 @@
           text-align: center;
         }
 
+        @media (max-width: 400px) {
+            .scroll-indicator {
+                display: none;
+            }
+        }
+
         .scroll-text {
           color: #CAF4FF;
           font-size: 14px;
@@ -1226,34 +1232,158 @@
             stroke: #CAF4FF;
             fill: none;
         }
+
+
+        /* Mobile Navigation header */
+
+.header-logo {
+    position: absolute;
+    left: 20px;
+    width: 100px;
+    cursor: pointer;
+}
+
+li, a, button{
+    font-family: "Libre Caslon Display", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #CAF4FF;
+    text-decoration: none;
+    
+}
+header{
+    background-color: #00273C;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 2px 2px 10px black;
+}
+header:hover{
+    box-shadow: 2px 2px 25px black;
+    transition: 0.5s;
+}
+.header-sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.header-navlinks li{
+    display: inline-block;
+    margin: 30px;
+    align-items: center;
+}
+.header-navlinks li a:hover{
+    color: tomato;
+    text-shadow: 1px 1px 5px black;
+}
+
+.header-button{
+    width: 100%;
+    padding: 12px;
+    background-color: #141C26;
+    border-radius: 50px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.5s, ease 0s;
+    border: none;
+    z-index: 999;
+}
+.header-button:hover{
+    background-color: #141C26;
+    box-shadow: 1px 1px 5px black;
+}
+.header-sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 300px;
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: -3px 0 10px black;
+    display: none;
+    justify-content: flex-start;
+    list-style: none;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+}
+.header-sidebar li{
+    width: 100%;
+    margin: 25px;
+    text-shadow: 1px 1px 2px black;
+    
+}
+.header-sidebar img{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 120px;
+}
+
+.header-items a{
+  font-size: 1.5rem;
+}
+nav .header-sidebar ion-icon{
+    font-size: 2em;
+    position: absolute;
+    top: 35px;
+    right: 20px;
+}
+
+@media only screen and (min-width: 767px){
+    .header-navlinks ion-icon{
+        display: none;
+    }
+}
+@media only screen and (max-width: 767px){  
+    .header-navlinks .header-items{
+        display: none;
+    }
+}
+
+  @media only screen and (min-width: 767px){
+    .header-button {
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
 
-    <!-- Hero Container -->
-    <div class="hero-container">
-      <div class="overlay"></div>
-      
-      <!-- Header -->
-      <header class="header">
-        <!-- Logo -->
+    <header>
         <div class="logo">
           <svg viewBox="0 0 24 24" stroke-width="2">
             <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
           </svg>
         </div>
-        
-          <!-- Navigation -->
-          <nav class="nav" id="nav">
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
+        <nav>
+            <ul class="header-navlinks">
+                <li class="header-items"><a href="index.html">Home</a></li>
+                <li class="header-items"><a href="services.html">Services</a></li>
+                <li class="header-items"><a href="contact.html">Contact</a></li>
+                <li class="header-items"><a href="about.html">About Us</a></li>
+                <li onclick="showSidebar()"><a href="#"><button aria-label="Open menu" class="header-button">☰</button></a></li> 
             </ul>
-          </nav>
-      </header>
+            <ul class="header-sidebar">
+                <li><a href="#"><ion-icon name="close-outline"></ion-icon></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <img  onclick="closeSidebar()" src="https://t3.ftcdn.net/jpg/02/51/80/40/360_F_251804029_ON3oL8BkopdueiT61zXaDMOF3qfSiWNx.jpg" alt="" >
+            </ul>
+        </nav>
+    </header>
 
+    <div class="hero-container">
+        <div class="overlay"></div>
+        
       <!-- Mobile Navigation -->
       <div class="mobile-nav" id="mobile-nav">
         <div class="mobile-logo">
@@ -1644,15 +1774,43 @@
         </footer>
 
     <script>
-    // Sticky header scroll effect
-    window.addEventListener('scroll', function() {
-        const header = document.querySelector('.header');
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
+        function showSidebar() {
+    const sidebar = document.querySelector(".header-sidebar");
+    sidebar.style.display = 'flex';
+    setTimeout(() => {
+        sidebar.style.transform = 'translateX(0)'; 
+    }, 10);
+}
+
+function closeSidebar() {
+    const sidebar = document.querySelector(".header-sidebar");
+    sidebar.style.transform = 'translateX(100%)'; 
+    setTimeout(() => {
+        sidebar.style.display = 'none';
+    }, 300);
+}
+
+// Sticky header on scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const headerEl = document.querySelector('header');
+    if (!headerEl) return;
+    const headerHeight = headerEl.offsetHeight;
+    let isSticky = false;
+
+    function onScroll() {
+        if (window.scrollY > 0 && !isSticky) {
+            headerEl.classList.add('header-sticky');
+            document.body.style.paddingTop = headerHeight + 'px';
+            isSticky = true;
+        } else if (window.scrollY === 0 && isSticky) {
+            headerEl.classList.remove('header-sticky');
+            document.body.style.paddingTop = '';
+            isSticky = false;
         }
-    });
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+});
 
     // FAQ toggle behavior
     (function() {
