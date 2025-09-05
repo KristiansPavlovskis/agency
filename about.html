@@ -353,6 +353,65 @@
             padding: 80px 0;
         }
 
+        /* ========== SCROLL ANIMATIONS ========== */
+        /* Initial hidden states for scroll animations */
+        .content-section .content-grid,
+        .content-section .purpose-section,
+        .content-section .features-section,
+        .content-section .feature-card,
+        .content-section .purpose-title,
+        .content-section .purpose-description,
+        .content-section .purpose-image,
+        .sustainability-section,
+        .sustainability-grid,
+        .sustainability-label,
+        .sustainability-text,
+        .faq-section,
+        .faq-grid,
+        .faq-title,
+        .faq-list {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* Revealed state when section is in view */
+        .content-section.revealed .content-grid,
+        .content-section.revealed .purpose-section,
+        .content-section.revealed .features-section,
+        .content-section.revealed .feature-card,
+        .content-section.revealed .purpose-title,
+        .content-section.revealed .purpose-description,
+        .content-section.revealed .purpose-image,
+        .sustainability-section.revealed,
+        .sustainability-section.revealed .sustainability-grid,
+        .sustainability-section.revealed .sustainability-label,
+        .sustainability-section.revealed .sustainability-text,
+        .faq-section.revealed,
+        .faq-section.revealed .faq-grid,
+        .faq-section.revealed .faq-title,
+        .faq-section.revealed .faq-list {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays */
+        .content-section.revealed .content-grid { transition-delay: 0.1s; }
+        .content-section.revealed .purpose-section { transition-delay: 0.2s; }
+        .content-section.revealed .features-section { transition-delay: 0.3s; }
+        .content-section.revealed .feature-card:nth-child(1) { transition-delay: 0.1s; }
+        .content-section.revealed .feature-card:nth-child(2) { transition-delay: 0.2s; }
+        .content-section.revealed .feature-card:nth-child(3) { transition-delay: 0.3s; }
+        .content-section.revealed .purpose-title { transition-delay: 0.15s; }
+        .content-section.revealed .purpose-description { transition-delay: 0.25s; }
+        .content-section.revealed .purpose-image { transition-delay: 0.35s; }
+        
+        .sustainability-section.revealed .sustainability-label { transition-delay: 0.1s; }
+        .sustainability-section.revealed .sustainability-text { transition-delay: 0.2s; }
+        
+        .faq-section.revealed .faq-title { transition-delay: 0.1s; }
+        .faq-section.revealed .faq-list { transition-delay: 0.2s; }
+
         .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -551,7 +610,7 @@
         .feature-icon {
             width: 50px;
             height: 50px;
-            background: #1e3a8a;
+            border: 1px solid #fff;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -563,6 +622,10 @@
             width: 24px;
             height: 24px;
             fill: #fff;
+        }
+
+        .feature-icon img {
+            width: 30px;
         }
 
         .feature-content h3 {
@@ -1533,9 +1596,7 @@ nav .header-sidebar ion-icon{
                 <div class="features-section">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <img src="images/strategy_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>innovative strategies</h3>
@@ -1545,9 +1606,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
+                            <img src="images/chart_data_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>tailored growth paths</h3>
@@ -1557,9 +1616,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <img src="images/destruction_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>sustainable impact</h3>
@@ -1581,9 +1638,7 @@ nav .header-sidebar ion-icon{
                 <div class="features-section">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                            </svg>
+                            <img src="images/1k_plus_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>global reach</h3>
@@ -1593,9 +1648,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
+                            <img src="images/background_replace_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>lasting presence</h3>
@@ -1605,9 +1658,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <img src="images/altitude_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>shared ascent</h3>
@@ -1647,9 +1698,7 @@ nav .header-sidebar ion-icon{
                 <div class="features-section">
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <img src="images/verified_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>integrity</h3>
@@ -1659,9 +1708,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
+                            <img src="images/handshake_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>collaboration </h3>
@@ -1671,9 +1718,7 @@ nav .header-sidebar ion-icon{
 
                     <div class="feature-card">
                         <div class="feature-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                            </svg>
+                            <img src="images/star_shine_24dp_E3E3E3_FILL0_wght200_GRAD0_opsz24.png" alt="">
                         </div>
                         <div class="feature-content">
                             <h3>excellence</h3>
@@ -1949,6 +1994,38 @@ document.addEventListener('DOMContentLoaded', function() {
         // Start progressive loading
         loadProgressiveImages();
     })();
+
+    // ========== SCROLL ANIMATIONS ==========
+    // Intersection Observer for scroll-triggered animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections for animations
+    document.querySelectorAll('.content-section, .sustainability-section, .faq-section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // ========== HERO CONTENT ANIMATIONS ==========
+    // Add initial animation states for hero content
+    document.querySelectorAll('.content > *').forEach((el, index) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+        setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        }, index * 100 + 500);
+    });
 
     </script>
 
