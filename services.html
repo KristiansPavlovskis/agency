@@ -120,7 +120,7 @@
           position: relative;
           width: 100vw;
           height: 100vh;
-          background-image: url('images/ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+          background-image: url('images/1000ahmet-yuksek-1E3gWJFOXms-unsplash.png');
           background-size: cover;
           background-position: center;
           background-repeat: no-repeat;
@@ -128,6 +128,55 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          transition: background-image 0.3s ease;
+          z-index: 1;
+        }
+
+        /* Blur-up technique: Start with low quality, then upgrade */
+        .hero-container::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url('images/1000ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          filter: blur(3px);
+          transform: scale(1.1);
+          z-index: 1;
+          transition: opacity 0.5s ease;
+          background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
+        }
+
+        .hero-container.loaded-1980::before {
+          background-image: url('images/1980ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+          filter: blur(1px);
+          background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
+        }
+
+        .hero-container.loaded-3500::before {
+          background-image: url('images/3500ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+          filter: blur(0px);
+          opacity: 0;
+          background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
         }
 
         .overlay {
@@ -142,6 +191,7 @@
             rgba(0, 39, 60, 0.6) 70%,
             #00273C 100%
           );
+          z-index: 2;
         }
 
         /* Main content */
@@ -1244,9 +1294,11 @@
         header{
             background-color: #00273C;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
             align-items: center;
             box-shadow: 2px 2px 10px black;
+            position: relative;
+            z-index: 1000;
         }
         header:hover{
             box-shadow: 2px 2px 25px black;
@@ -1812,6 +1864,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 });
+
+// Blur-up technique: Progressive image loading
+(function() {
+    const heroContainer = document.querySelector('.hero-container');
+    if (!heroContainer) return;
+
+    // Preload higher quality images
+    const preloadImage = (src) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = src;
+        });
+    };
+
+    // Progressive loading sequence
+    const loadProgressiveImages = async () => {
+        try {
+            // Load 1980px version
+            await preloadImage('images/1980ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+            heroContainer.classList.add('loaded-1980');
+            
+            // Small delay before loading 3500px version
+            setTimeout(async () => {
+                try {
+                    await preloadImage('images/3500ahmet-yuksek-1E3gWJFOXms-unsplash.png');
+                    heroContainer.classList.add('loaded-3500');
+                    
+                    // Update main background to 3500px version
+                    heroContainer.style.backgroundImage = 'url("images/3500ahmet-yuksek-1E3gWJFOXms-unsplash.png")';
+                } catch (error) {
+                    console.warn('Failed to load 3500px image:', error);
+                }
+            }, 500);
+            
+        } catch (error) {
+            console.warn('Failed to load 1980px image:', error);
+        }
+    };
+
+    // Start progressive loading
+    loadProgressiveImages();
+})();
     </script>
 
     <!-- Global Cursor Shine Effect -->

@@ -70,7 +70,7 @@ body::before {
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('images/hero.jpg');
+  background-image: url('images/1000darkmountain.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -78,6 +78,55 @@ body::before {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: background-image 0.3s ease;
+  z-index: 1;
+}
+
+/* Blur-up technique: Start with low quality, then upgrade */
+.hero-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('images/1000darkmountain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  transform: scale(1.1);
+  z-index: 1;
+  transition: opacity 0.5s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
+}
+
+.hero-container.loaded-1980::before {
+  background-image: url('images/1980darkmountain.jpg');
+  filter: blur(1px);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
+}
+
+.hero-container.loaded-3500::before {
+  background-image: url('images/3500darkmountain.jpg');
+  filter: blur(0px);
+  opacity: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 39, 60, 0) 0%,
+    rgba(0, 39, 60, 0.6) 70%,
+    #00273C 100%
+  );
 }
 
 .overlay {
@@ -92,6 +141,7 @@ body::before {
     rgba(0, 39, 60, 0.6) 70%,
     #00273C 100%
   );
+  z-index: 2;
 }
 
 /* Navigation */
@@ -645,12 +695,12 @@ body::before {
   margin-bottom: 0;
 }
 
-.about-section:nth-child(3) {
+.about-section-2 {
   grid-template-columns: 1fr 1fr;
   direction: rtl;
 }
 
-.about-section:nth-child(3) > * {
+.about-section-2 > * {
   direction: ltr;
 }
 
@@ -666,7 +716,7 @@ body::before {
   left: 10px;
 }
 
-.about-section:nth-child(3) .about-big-number {
+.about-section-2 .about-big-number {
   right: 200px;
   left: auto;
 }
@@ -1039,6 +1089,10 @@ body::before {
 }
 
 @media (max-width: 768px) {
+  header{
+    display: flex;
+    justify-content: flex-end !important; 
+  }
   .main-heading {
     font-size: 48px;
   }
@@ -2277,9 +2331,11 @@ li, a, button{
 header{
     background-color: #00273C;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 10px black;
+    position: relative;
+    z-index: 1000;
 }
 header:hover{
     box-shadow: 2px 2px 25px black;
@@ -2382,6 +2438,32 @@ nav .header-sidebar ion-icon{
   background: linear-gradient(to bottom, rgba(20, 28, 38, 0) 40%, #141C26 100%);
 }
 
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 4.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.close-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.1);
+}
+
 </style>
 </head>
 <body>
@@ -2405,7 +2487,7 @@ nav .header-sidebar ion-icon{
             <li><a href="services.html">Services</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <img  onclick="closeSidebar()" src="https://t3.ftcdn.net/jpg/02/51/80/40/360_F_251804029_ON3oL8BkopdueiT61zXaDMOF3qfSiWNx.jpg" alt="" >
+            <button class="close-btn" onclick="closeSidebar()">×</button>
         </ul>
     </nav>
 </header>
@@ -2518,7 +2600,7 @@ nav .header-sidebar ion-icon{
     </div>
     <div class="about-image-container">
       <div class="about-image-box">
-        <img src="images/reach.png" alt="Reach" />
+        <img src="images/luca-calderone-fwvaS5tq69g-unsplash.jpg" alt="Reach" />
       </div>
     </div>
   </div>
@@ -2532,7 +2614,7 @@ nav .header-sidebar ion-icon{
     </div>
     <div class="about-image-container">
       <div class="about-image-box">
-        <img src="images/elevation.png" alt="Elevation" />
+        <img src="images/felix-lam-J7fxkhtOqt0-unsplash.jpg" alt="Elevation" />
       </div>
     </div>
   </div>
@@ -2546,7 +2628,7 @@ nav .header-sidebar ion-icon{
     </div>
     <div class="about-image-container">
       <div class="about-image-box">
-        <img src="images/breakthrough.png" alt="Breakthrough" />
+        <img src="images/pexels-fmaderebner-869258.jpg" alt="Breakthrough" />
       </div>
     </div>
   </div>
@@ -2987,6 +3069,50 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', onScroll, { passive: true });
 });
+
+// Blur-up technique: Progressive image loading
+(function() {
+    const heroContainer = document.querySelector('.hero-container');
+    if (!heroContainer) return;
+
+    // Preload higher quality images
+    const preloadImage = (src) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = reject;
+            img.src = src;
+        });
+    };
+
+    // Progressive loading sequence
+    const loadProgressiveImages = async () => {
+        try {
+            // Load 1980px version
+            await preloadImage('images/1980darkmountain.jpg');
+            heroContainer.classList.add('loaded-1980');
+            
+            // Small delay before loading 3500px version
+            setTimeout(async () => {
+                try {
+                    await preloadImage('images/3500darkmountain.jpg');
+                    heroContainer.classList.add('loaded-3500');
+                    
+                    // Update main background to 3500px version
+                    heroContainer.style.backgroundImage = 'url("images/3500darkmountain.jpg")';
+                } catch (error) {
+                    console.warn('Failed to load 3500px image:', error);
+                }
+            }, 500);
+            
+        } catch (error) {
+            console.warn('Failed to load 1980px image:', error);
+        }
+    };
+
+    // Start progressive loading
+    loadProgressiveImages();
+})();
 </script>
 
 <!-- Form Handler -->
