@@ -566,6 +566,128 @@
         }
 
 
+        /* ========== SCROLL ANIMATIONS ========== */
+        /* Initial hidden states for scroll animations */
+        .services-section,
+        .service-row,
+        .service-content,
+        .service-header,
+        .service-label,
+        .service-title,
+        .service-description,
+        .service-image-container,
+        .service-image,
+        .supply-blocks,
+        .supply-block,
+        .supply-title,
+        .supply-text,
+        .supply-text-centered,
+        .sustainability-section,
+        .sustainability-grid,
+        .sustainability-label,
+        .sustainability-text,
+        .why-choose-section,
+        .why-choose-grid,
+        .info-panel,
+        .text-panel,
+        .panel-icon,
+        .panel-title,
+        .panel-description,
+        .image-section{
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        /* Revealed state when section is in view */
+        .services-section.revealed,
+        .services-section.revealed .service-row,
+        .services-section.revealed .service-content,
+        .services-section.revealed .service-header,
+        .services-section.revealed .service-label,
+        .services-section.revealed .service-title,
+        .services-section.revealed .service-description,
+        .services-section.revealed .service-image-container,
+        .services-section.revealed .service-image,
+        .services-section.revealed .supply-blocks,
+        .services-section.revealed .supply-block,
+        .services-section.revealed .supply-title,
+        .services-section.revealed .supply-text,
+        .services-section.revealed .supply-text-centered,
+        .sustainability-section.revealed,
+        .sustainability-section.revealed .sustainability-grid,
+        .sustainability-section.revealed .sustainability-label,
+        .sustainability-section.revealed .sustainability-text,
+        .why-choose-section.revealed,
+        .why-choose-section.revealed .why-choose-grid,
+        .why-choose-section.revealed .info-panel,
+        .why-choose-section.revealed .text-panel,
+        .why-choose-section.revealed .panel-icon,
+        .why-choose-section.revealed .panel-title,
+        .why-choose-section.revealed .panel-description,
+        .why-choose-section.revealed .image-section {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered animation delays for services */
+        .services-section.revealed .service-row { transition-delay: 0.1s; }
+        .services-section.revealed .service-content { transition-delay: 0.2s; }
+        .services-section.revealed .service-header { transition-delay: 0.15s; }
+        .services-section.revealed .service-label { transition-delay: 0.1s; }
+        .services-section.revealed .service-title { transition-delay: 0.2s; }
+        .services-section.revealed .service-description { transition-delay: 0.25s; }
+        .services-section.revealed .service-image-container { transition-delay: 0.3s; }
+        .services-section.revealed .service-image { transition-delay: 0.35s; }
+        .services-section.revealed .supply-blocks { transition-delay: 0.2s; }
+        .services-section.revealed .supply-block:nth-child(1) { transition-delay: 0.1s; }
+        .services-section.revealed .supply-block:nth-child(2) { transition-delay: 0.2s; }
+        .services-section.revealed .supply-block:nth-child(3) { transition-delay: 0.3s; }
+        .services-section.revealed .supply-block:nth-child(4) { transition-delay: 0.4s; }
+        .services-section.revealed .supply-title { transition-delay: 0.15s; }
+        .services-section.revealed .supply-text { transition-delay: 0.2s; }
+        .services-section.revealed .supply-text-centered { transition-delay: 0.2s; }
+        
+        /* Staggered animation delays for sustainability */
+        .sustainability-section.revealed .sustainability-label { transition-delay: 0.1s; }
+        .sustainability-section.revealed .sustainability-text { transition-delay: 0.2s; }
+        
+        /* Staggered animation delays for why choose section */
+        .why-choose-section.revealed .why-choose-grid { transition-delay: 0.1s; }
+        .why-choose-section.revealed .info-panel:nth-child(1) { transition-delay: 0.1s; }
+        .why-choose-section.revealed .info-panel:nth-child(2) { transition-delay: 0.2s; }
+        .why-choose-section.revealed .info-panel:nth-child(3) { transition-delay: 0.3s; }
+        .why-choose-section.revealed .text-panel { transition-delay: 0.4s; }
+        .why-choose-section.revealed .panel-icon { transition-delay: 0.15s; }
+        .why-choose-section.revealed .panel-title { transition-delay: 0.2s; }
+        .why-choose-section.revealed .panel-description { transition-delay: 0.25s; }
+        .why-choose-section.revealed .image-section { transition-delay: 0.3s; }
+        
+        
+        /* Service wave section animations */
+        .service-wave-section.revealed .service-container,
+        .service-wave-section.revealed .service-row-1,
+        .service-wave-section.revealed .service-content,
+        .service-wave-section.revealed .supply-blocks,
+        .service-wave-section.revealed .supply-block,
+        .service-wave-section.revealed .supply-title,
+        .service-wave-section.revealed .supply-text-centered {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered delays for wave section */
+        .service-wave-section.revealed .service-container { transition-delay: 0.1s; }
+        .service-wave-section.revealed .service-row-1 { transition-delay: 0.2s; }
+        .service-wave-section.revealed .service-content { transition-delay: 0.3s; }
+        .service-wave-section.revealed .supply-blocks { transition-delay: 0.4s; }
+        .service-wave-section.revealed .supply-block:nth-child(1) { transition-delay: 0.5s; }
+        .service-wave-section.revealed .supply-block:nth-child(2) { transition-delay: 0.6s; }
+        .service-wave-section.revealed .supply-block:nth-child(3) { transition-delay: 0.7s; }
+        .service-wave-section.revealed .supply-block:nth-child(4) { transition-delay: 0.8s; }
+        .service-wave-section.revealed .supply-title { transition-delay: 0.6s; }
+        .service-wave-section.revealed .supply-text-centered { transition-delay: 0.7s; }
+
         /* ========== RESPONSIVE DESIGN (copied from about.html for hero) ========== */
         /* Laptop/Desktop (1024px and up) */
         @media (min-width: 1024px) {
@@ -627,12 +749,6 @@
             .main-heading { font-size: 48px; }
             .footer-container { padding: 30px 15px 15px 15px; }
         }
-
-
-
-
-
-
 
 
          /* ========== FOOTER ========== */
@@ -1347,7 +1463,7 @@
             align-items: center;
         }
         .header-navlinks li a:hover{
-            color: tomato;
+            color: #F8CD40;
             text-shadow: 1px 1px 5px black;
         }
 
@@ -1721,7 +1837,9 @@
             </div>
         </section>
     </div>
-        <div style="background: linear-gradient(to top, #141C26, transparent); width: 100%;">
+        <!-- SEO Service Section -->
+         <div style="background: linear-gradient(to top, #141C26, transparent); width: 100%;">
+        <section class="services-section" >
             <div class="container">
                 <div class="service-row">
                     <!-- Performance Analysis Image -->
@@ -1743,8 +1861,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-
+        </section>
+    </div>
 
                        <!-- Service Wave Section -->
      <section class="service-wave-section">
@@ -1940,6 +2058,45 @@ document.addEventListener('DOMContentLoaded', function() {
     // Start progressive loading
     loadProgressiveImages();
 })();
+
+// ========== ANIMATIONS ==========
+// Animate elements on scroll
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+        }
+    });
+}, observerOptions);
+
+// Add initial animation states for hero content
+document.querySelectorAll('.content > *').forEach((el, index) => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+    setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+    }, index * 100 + 500);
+});
+
+// Observe sections for scroll-triggered animations
+document.querySelectorAll('.services-section').forEach(section => observer.observe(section));
+document.querySelectorAll('.sustainability-section').forEach(section => observer.observe(section));
+document.querySelectorAll('.why-choose-section').forEach(section => observer.observe(section));
+document.querySelectorAll('.site-footer').forEach(section => observer.observe(section));
+document.querySelectorAll('.service-wave-section').forEach(section => observer.observe(section));
+
+// Also observe individual elements that might not be inside observed sections
+document.querySelectorAll('.service-row').forEach(element => observer.observe(element));
+document.querySelectorAll('.supply-blocks').forEach(element => observer.observe(element));
+document.querySelectorAll('.info-panel').forEach(element => observer.observe(element));
+document.querySelectorAll('.text-panel').forEach(element => observer.observe(element));
     </script>
 
     <!-- Global Cursor Shine Effect -->
