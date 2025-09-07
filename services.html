@@ -306,8 +306,7 @@
             position: absolute;
             left: 80px;
             width: 50px;
-            height: 50px;
-            border: 2px solid #CAF4FF;
+            height: 50px; 
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -316,11 +315,10 @@
             transition: all 0.3s ease;
         }
 
-        .logo svg {
-            width: 24px;
-            height: 24px;
-            stroke: #CAF4FF;
-            fill: none;
+        .logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
         }
 
         .nav-links {
@@ -956,7 +954,7 @@
             .cta-row { justify-content: center; }
             .cta-button { align-self: center; }
             .logo { left: 20px; width: 35px; height: 35px; }
-            .logo svg { width: 18px; height: 18px; }
+            .logo img { width: 70px; height: 70px; }
             .nav-links { gap: 25px; }
             .nav-links a { font-size: 14px; }
             .agency-title { font-size: 28px; flex-direction: column; gap: 8px; }
@@ -982,7 +980,7 @@
         @media (max-width: 480px) {
             .header { padding: 10px 15px; padding-top: 25px; padding-bottom: 25px; }
             .logo { left: 15px; width: 30px; height: 30px; }
-            .logo svg { width: 16px; height: 16px; }
+            .logo img { width: 70px; height: 70px; }
             .nav-links { gap: 20px; }
             .nav-links a { font-size: 13px; }
             .content { padding: 0 15px; }
@@ -1794,9 +1792,7 @@
 <body>
     <header role="banner">
         <div class="logo" aria-label="Adkryv Agency Logo">
-            <svg viewBox="0 0 24 24" stroke-width="2" aria-hidden="true">
-              <path d="M3 3l18 18M3 21l6-6-6-6M21 3l-6 6 6 6"/>
-            </svg>
+            <img src="images/Screenshot_2025-08-16_224558-removebg-preview.png" alt="Adkryv logo">
           </div>
         <nav role="navigation" aria-label="Main navigation">
             <ul class="header-navlinks">
