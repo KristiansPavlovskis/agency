@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerZone Gym London | Classes, Membership & Personal Training</title>
+    <meta
+      name="description"
+      content="PowerZone is a premium fitness gym in London offering HIIT, strength training, boxing, yoga and flexible monthly memberships."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="PowerZone Fitness" />
+    <meta name="geo.region" content="GB-LND" />
+    <meta name="geo.placename" content="London" />
+    <meta name="theme-color" content="#080810" />
+    <link rel="canonical" href="https://powerzone.fit/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="PowerZone Fitness" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:title" content="PowerZone Gym London | Classes, Membership & Personal Training" />
+    <meta
+      property="og:description"
+      content="Join PowerZone in London for elite coaching, weekly classes, and membership plans built for every level."
+    />
+    <meta property="og:url" content="https://powerzone.fit/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PowerZone Gym London | Classes, Membership & Personal Training" />
+    <meta
+      name="twitter:description"
+      content="Join PowerZone in London for elite coaching, weekly classes, and membership plans built for every level."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Gym",
+        "name": "PowerZone Fitness",
+        "url": "https://powerzone.fit/",
+        "telephone": "+44 20 7946 0198",
+        "email": "hello@powerzone.fit",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "142 Iron Street",
+          "addressLocality": "London",
+          "postalCode": "SW1A 1AA",
+          "addressCountry": "GB"
+        },
+        "areaServed": "United Kingdom",
+        "priceRange": "££"
+      }
+    </script>
+  </head>
+  <body>
+    <header class="top-nav">
+      <div class="nav-inner">
+        <a class="brand" href="#hero" aria-label="Powerzone home">
+          <span class="brand-icon" aria-hidden="true">⚡</span>
+          <span class="brand-text">POWERZONE</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#classes">CLASSES</a>
+          <a href="#membership">MEMBERSHIP</a>
+          <a href="#about">ABOUT</a>
+          <a class="join-btn" href="#join-now">JOIN NOW</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+          <div class="hero-content-inner">
+            <div class="eyebrow-row">
+              <span class="eyebrow-line"></span>
+              <span class="eyebrow-text">EST. 2015 · PREMIUM FITNESS</span>
+            </div>
+
+            <h1 class="hero-title">
+              <span class="title-white">FORGE</span>
+              <span class="title-orange">YOUR</span>
+              <span class="title-white">LIMITS</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Elite training, world-class coaches, and a community that pushes you
+              beyond what you thought possible.
+            </p>
+
+            <div class="hero-actions">
+              <button class="btn btn-primary" data-target="join-now">START TODAY</button>
+              <button class="btn btn-outline" data-target="classes">VIEW CLASSES</button>
+            </div>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <div class="stat-number">2,400+</div>
+                <div class="stat-label">MEMBERS</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">48</div>
+                <div class="stat-label">WEEKLY CLASSES</div>
+              </div>
+              <div class="stat">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">ELITE TRAINERS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-bottom-cut"></div>
+      </section>
+
+      <section id="classes" class="classes-section">
+        <div class="classes-inner">
+          <div class="classes-head">
+            <div class="classes-title-wrap">
+              <div class="eyebrow-row classes-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">WEEKLY SCHEDULE</span>
+              </div>
+              <h2 class="classes-title">
+                <span>TODAY'S</span>
+                <span class="title-yellow">CLASSES</span>
+              </h2>
+            </div>
+            <p class="classes-intro">
+              Hover over each class to explore the full details, trainer, and
+              intensity level.
+            </p>
+          </div>
+
+          <div class="classes-strip" id="classesStrip"></div>
+        </div>
+      </section>
+      <section id="membership" class="membership-section">
+        <div class="membership-inner">
+          <div class="membership-head">
+            <div class="pricing-eyebrow">
+              <span class="pricing-line"></span>
+              <span class="pricing-text">PRICING</span>
+              <span class="pricing-line"></span>
+            </div>
+            <h2 class="membership-title">
+              <span>CHOOSE YOUR</span>
+              <span class="title-orange">LEVEL</span>
+            </h2>
+          </div>
+
+          <div class="plans-grid" id="membershipPlans"></div>
+        </div>
+      </section>
+      <section id="join-now" class="join-section">
+        <div class="join-grid">
+          <div class="join-image-col" aria-hidden="true">
+            <img
+              class="join-image"
+              src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80"
+              alt="Gym Floor"
+            />
+            <div class="join-image-overlay"></div>
+            <div class="join-image-text">
+              YOUR <span class="join-highlight">TRANSFORMATION</span> STARTS NOW.
+            </div>
+          </div>
+
+          <div class="join-form-col">
+            <div class="join-ghost-wrap" aria-hidden="true">
+              <span class="join-ghost-name" id="ghostName"></span>
+            </div>
+
+            <div class="join-form-inner">
+              <div class="eyebrow-row join-eyebrow">
+                <span class="eyebrow-line"></span>
+                <span class="eyebrow-text">JOIN POWERZONE</span>
+              </div>
+
+              <h2 class="join-title">
+                <span>BECOME A</span>
+                <span class="title-yellow">MEMBER</span>
+              </h2>
+              <p class="join-subtitle">
+                No commitment required for the first 7 days. Cancel anytime.
+              </p>
+
+              <div class="join-success" id="joinSuccess" hidden>
+                <div class="join-check">✓</div>
+                <h3 class="join-success-title" id="joinSuccessTitle"></h3>
+                <p class="join-success-copy">
+                  We'll be in touch shortly with your onboarding details. Get ready
+                  to push your limits.
+                </p>
+              </div>
+
+              <form class="join-form" id="joinForm" novalidate>
+                <div class="join-field">
+                  <label for="joinName">FULL NAME</label>
+                  <input id="joinName" name="name" type="text" placeholder="Your name" required />
+                </div>
+
+                <div class="join-field">
+                  <label for="joinEmail">EMAIL ADDRESS</label>
+                  <input
+                    id="joinEmail"
+                    name="email"
+                    type="email"
+                    placeholder="your@email.com"
+                    required
+                  />
+                </div>
+
+                <div class="join-field">
+                  <label for="joinPlan">SELECT PLAN</label>
+                  <select id="joinPlan" name="plan">
+                    <option value="starter">Starter — £29/mo</option>
+                    <option value="pro">Pro — £49/mo</option>
+                    <option value="elite" selected>Elite — £79/mo</option>
+                  </select>
+                </div>
+
+                <button type="submit" class="join-submit">
+                  <span>CLAIM MY SPOT</span>
+                  <span class="join-arrow">→</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a class="footer-brand" href="#hero" aria-label="Powerzone home">
+            <span class="footer-brand-icon" aria-hidden="true">⚡</span>
+            <span class="footer-brand-text">POWERZONE</span>
+          </a>
+          <p class="footer-brand-copy">
+            Built for those who refuse to settle.<br />
+            Train harder. Live stronger.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="Instagram">◉</a>
+            <a href="#" aria-label="Twitter">◍</a>
+            <a href="#" aria-label="Youtube">▷</a>
+          </div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>NAVIGATE</h4>
+          <ul>
+            <li><a href="#classes">Classes</a></li>
+            <li><a href="#membership">Membership</a></li>
+            <li><a href="#join-now">Trainers</a></li>
+            <li><a href="#join-now">About Us</a></li>
+            <li><a href="#join-now">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>PROGRAMS</h4>
+          <ul>
+            <li><a href="#classes">HIIT Training</a></li>
+            <li><a href="#classes">Strength &amp; Conditioning</a></li>
+            <li><a href="#classes">Boxing</a></li>
+            <li><a href="#classes">Yoga &amp; Recovery</a></li>
+            <li><a href="#classes">Personal Training</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-contact-col">
+          <h4>FIND US</h4>
+          <ul>
+            <li><span class="contact-icon">◉</span>142 Iron Street, London SW1A 1AA</li>
+            <li><span class="contact-icon">◔</span>+44 20 7946 0198</li>
+            <li><span class="contact-icon">✉</span>hello@powerzone.fit</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-watermark">POWERZONE</div>
+        <p class="footer-legal">
+          © 2026 PowerZone Fitness. All rights reserved. · Privacy Policy · Terms
+          of Service
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

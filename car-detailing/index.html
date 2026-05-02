@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proshine Hero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <section class="hero" id="hero">
+    <div class="bg-layer bg-grid"></div>
+    <div class="bg-layer bg-lines"></div>
+    <div class="bg-layer bg-vignette"></div>
+    <div class="bg-layer bg-radial" id="bg-radial"></div>
+
+    <div class="cursor-ring" id="cursor-ring"></div>
+    <div class="cursor-dot" id="cursor-dot"></div>
+
+    <div class="floating-circle c1"></div>
+    <div class="floating-circle c2"></div>
+
+    <div class="hero-car" id="hero-car" aria-hidden="true">
+      <img
+        src="ff871cdcb44661f28c83a8b37b962da0.png"
+        alt=""
+        width="1600"
+        height="900"
+        decoding="async"
+      />
+    </div>
+
+    <header class="top-nav" id="top-nav">
+      <div class="top-nav-inner">
+        <div class="brand">PRO<span>SHINE</span></div>
+        <nav class="nav-links">
+          <button data-scroll="#services">SERVICES</button>
+          <button data-scroll="#packages">PACKAGES</button>
+          <button data-scroll="#reviews">REVIEWS</button>
+          <button class="book-pill" data-scroll="#book-now">BOOK NOW</button>
+        </nav>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <button data-scroll="#services">SERVICES</button>
+        <button data-scroll="#packages">PACKAGES</button>
+        <button data-scroll="#reviews">REVIEWS</button>
+        <button data-scroll="#book-now">BOOK NOW</button>
+      </div>
+    </header>
+
+    <div class="hero-content">
+      <div class="eyebrow-wrap">
+        <span class="eyebrow-line"></span>
+        <p class="eyebrow">PREMIUM AUTO DETAILING</p>
+      </div>
+
+      <h1 class="title title-solid">PRO</h1>
+      <h1 class="title title-outline">SHINE</h1>
+
+      <p class="description">
+        We don't just clean cars. We restore them to better
+        than showroom condition — and protect them for
+        years to come.
+      </p>
+
+      <div class="hero-cta">
+        <button class="btn-primary" id="book-now-cta" data-scroll="#book-now">BOOK NOW — IT'S FREE TO QUOTE</button>
+        <button class="btn-link" data-scroll="#services">SEE OUR WORK <span class="arrow">✦</span></button>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stats-inner">
+        <div class="stat-item">
+          <p class="stat-value"><span data-target="1240">0</span>+</p>
+          <p class="stat-label">CARS DETAILED</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-value"><span data-target="98">0</span>%</p>
+          <p class="stat-label">5-STAR REVIEWS</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-value"><span data-target="7">0</span> yrs</p>
+          <p class="stat-label">IN BUSINESS</p>
+        </div>
+        <div class="stat-item">
+          <p class="stat-value"><span data-target="3">0</span>hr</p>
+          <p class="stat-label">AVG TURNAROUND</p>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div class="ticker-track">
+          <span>BMW <b>✦</b></span>
+          <span>PORSCHE <b>✦</b></span>
+          <span>FERRARI <b>✦</b></span>
+          <span>LAMBORGHINI <b>✦</b></span>
+          <span>MERCEDES <b>✦</b></span>
+          <span>TESLA <b>✦</b></span>
+          <span>AUDI <b>✦</b></span>
+          <span>MCLAREN <b>✦</b></span>
+          <span>BENTLEY <b>✦</b></span>
+          <span>ASTON MARTIN <b>✦</b></span>
+          <span>ROLLS ROYCE <b>✦</b></span>
+          <span>JAGUAR <b>✦</b></span>
+
+          <span>BMW <b>✦</b></span>
+          <span>PORSCHE <b>✦</b></span>
+          <span>FERRARI <b>✦</b></span>
+          <span>LAMBORGHINI <b>✦</b></span>
+          <span>MERCEDES <b>✦</b></span>
+          <span>TESLA <b>✦</b></span>
+          <span>AUDI <b>✦</b></span>
+          <span>MCLAREN <b>✦</b></span>
+          <span>BENTLEY <b>✦</b></span>
+          <span>ASTON MARTIN <b>✦</b></span>
+          <span>ROLLS ROYCE <b>✦</b></span>
+          <span>JAGUAR <b>✦</b></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="services-wrap">
+      <div class="services-head">
+        <div>
+          <p class="services-kicker">WHAT WE DO</p>
+          <h2 class="services-title">
+            THREE SERVICES.<br />
+            <span>ONE STANDARD.</span>
+          </h2>
+        </div>
+        <p class="services-copy">
+          Every service is performed by a certified
+          technician. No shortcuts. No compromises.
+        </p>
+      </div>
+
+      <div class="services-list">
+        <article class="service-card reveal-card">
+          <div class="service-image">
+            <img
+              src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?auto=format&fit=crop&w=1200&q=80"
+              alt="Exterior detailing and paint correction"
+            />
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-topline">
+                <span class="service-number">01</span>
+                <span class="service-line service-blue"></span>
+              </div>
+              <span class="service-tag service-blue-tag">PAINT CORRECTION</span>
+              <h3>EXTERIOR DETAILING &amp; PAINT CORRECTION</h3>
+              <p>
+                Multi-stage paint correction eliminates every swirl, scratch, and oxidation mark.
+                We bring back the depth and mirror-like clarity your car had on day one.
+              </p>
+            </div>
+            <div class="service-bottom">
+              <div class="service-metric"><i class="dot blue"></i>UP TO 90% DEFECT REMOVAL</div>
+              <button data-scroll="#book-now" class="service-quote service-blue-link">GET A QUOTE →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-card">
+          <div class="service-image">
+            <img
+              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80"
+              alt="Interior detailing"
+            />
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-topline">
+                <span class="service-number">02</span>
+                <span class="service-line service-purple"></span>
+              </div>
+              <span class="service-tag service-purple-tag">INTERIOR CARE</span>
+              <h3>INTERIOR DETAILING</h3>
+              <p>
+                We go beyond a vacuum. Deep extraction, steam sanitization, leather conditioning,
+                odor elimination — every surface treated with obsessive precision.
+              </p>
+            </div>
+            <div class="service-bottom">
+              <div class="service-metric"><i class="dot purple"></i>STEAM-CLEAN TO 99.9% BACTERIA FREE</div>
+              <button data-scroll="#book-now" class="service-quote service-purple-link">GET A QUOTE →</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="service-card reveal-card">
+          <div class="service-image">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+              alt="Ceramic coating and PPF"
+            />
+          </div>
+          <div class="service-body">
+            <div>
+              <div class="service-topline">
+                <span class="service-number">03</span>
+                <span class="service-line service-cyan"></span>
+              </div>
+              <span class="service-tag service-cyan-tag">PROTECTION</span>
+              <h3>CERAMIC COATING &amp; PPF</h3>
+              <p>
+                Industry-leading nano-ceramic technology bonds permanently to your paint. Extreme
+                hydrophobic properties, UV protection, and a gloss that never quits.
+              </p>
+            </div>
+            <div class="service-bottom">
+              <div class="service-metric"><i class="dot cyan"></i>9H HARDNESS RATING</div>
+              <button data-scroll="#book-now" class="service-quote service-cyan-link">GET A QUOTE →</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing" id="packages">
+    <div class="pricing-wrap">
+      <div class="pricing-head reveal-card">
+        <p class="pricing-kicker">PRICING</p>
+        <h2 class="pricing-title">
+          PICK YOUR<br />
+          <span>PROTECTION LEVEL</span>
+        </h2>
+      </div>
+
+      <div class="pricing-grid">
+        <article class="price-card reveal-card">
+          <p class="plan-name">ESSENTIAL</p>
+          <div class="plan-price"><sup>$</sup><strong>149</strong></div>
+          <p class="plan-tagline">A thorough clean, inside and out.</p>
+          <div class="plan-line line-slate"></div>
+          <ul class="plan-features">
+            <li>Exterior hand wash &amp; dry</li>
+            <li>Interior vacuum &amp; wipe-down</li>
+            <li>Window cleaning (in &amp; out)</li>
+            <li>Tire dressing</li>
+            <li>Air freshener</li>
+          </ul>
+          <button class="plan-button btn-slate" data-scroll="#book-now">BOOK THIS PACKAGE</button>
+        </article>
+
+        <article class="price-card price-card-featured reveal-card">
+          <div class="popular">⚡ MOST POPULAR</div>
+          <p class="plan-name">ELITE</p>
+          <div class="plan-price"><sup>$</sup><strong>399</strong></div>
+          <p class="plan-tagline">The full detailing experience most clients choose.</p>
+          <div class="plan-line line-blue"></div>
+          <ul class="plan-features">
+            <li>Everything in Essential</li>
+            <li>One-stage paint correction</li>
+            <li>Full interior deep clean + steam</li>
+            <li>Leather conditioning</li>
+            <li>Engine bay cleaning</li>
+            <li>6-month paint sealant</li>
+            <li>Complimentary follow-up wash</li>
+          </ul>
+          <button class="plan-button btn-blue" data-scroll="#book-now">BOOK THIS PACKAGE</button>
+        </article>
+
+        <article class="price-card reveal-card">
+          <p class="plan-name">ARMOR</p>
+          <div class="plan-price"><sup>$</sup><strong>899+</strong></div>
+          <p class="plan-tagline">Long-term protection. The last detail you'll need.</p>
+          <div class="plan-line line-purple"></div>
+          <ul class="plan-features">
+            <li>Everything in Elite</li>
+            <li>Multi-stage paint correction</li>
+            <li>Pro-grade ceramic coating</li>
+            <li>PPF on high-impact zones</li>
+            <li>Graphene top coat</li>
+            <li>2-year warranty included</li>
+          </ul>
+          <button class="plan-button btn-purple" data-scroll="#book-now">BOOK THIS PACKAGE</button>
+        </article>
+      </div>
+
+      <p class="pricing-note reveal-card">All prices vary by vehicle size. Free quote — no commitment.</p>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="reviews-wrap">
+      <div class="reviews-head">
+        <div class="reveal-card">
+          <p class="reviews-kicker">CLIENT REVIEWS</p>
+          <h2 class="reviews-title">
+            DON'T TAKE<br />
+            <span>OUR WORD.</span>
+          </h2>
+        </div>
+
+        <div class="reviews-score reveal-card">
+          <div class="score-stars">★★★★★</div>
+          <p class="score-value">4.98 <span>/ 5.00</span></p>
+          <p class="score-sub">BASED ON 340+ REVIEWS</p>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+        <article class="review-card reveal-card">
+          <div class="quote-mark">❞</div>
+          <div class="mini-stars">★★★★★</div>
+          <p class="review-text">
+            "ProShine removed years of swirl marks I thought were permanent. The ceramic coating
+            now makes every drive feel like the car just rolled off the showroom floor."
+          </p>
+          <div class="review-footer">
+            <div>
+              <p class="review-name">JAMES R.</p>
+              <p class="review-vehicle">BMW M4 COMPETITION</p>
+            </div>
+            <p class="review-since">Client since 2022</p>
+          </div>
+        </article>
+
+        <article class="review-card reveal-card">
+          <div class="quote-mark">❞</div>
+          <div class="mini-stars">★★★★★</div>
+          <p class="review-text">
+            "The interior detail was surgical. Every crevice, every seam — perfect. The leather
+            conditioning made a 4-year-old cabin feel brand new. Absolutely worth every cent."
+          </p>
+          <div class="review-footer">
+            <div>
+              <p class="review-name">SARAH K.</p>
+              <p class="review-vehicle">RANGE ROVER SPORT</p>
+            </div>
+            <p class="review-since">Client since 2021</p>
+          </div>
+        </article>
+
+        <article class="review-card reveal-card">
+          <div class="quote-mark">❞</div>
+          <div class="mini-stars">★★★★★</div>
+          <p class="review-text">
+            "I'm very particular about who touches my 911. ProShine is the only detailer I trust.
+            The PPF install was flawless — zero visible edges, full coverage."
+          </p>
+          <div class="review-footer">
+            <div>
+              <p class="review-name">MARCUS T.</p>
+              <p class="review-vehicle">PORSCHE 911 GT3</p>
+            </div>
+            <p class="review-since">Client since 2020</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="booking" id="book-now">
+    <div class="booking-wrap">
+      <div class="booking-left reveal-card">
+        <p class="booking-kicker">BOOK NOW</p>
+        <h2 class="booking-title">YOUR VEHICLE<br />DESERVES THE BEST</h2>
+        <p class="booking-copy">
+          Request a quote or secure your appointment today. A specialist will
+          confirm your booking within 2 hours.
+        </p>
+
+        <div class="booking-trust-list">
+          <article class="trust-item">
+            <div class="trust-icon">🛡</div>
+            <div>
+              <p class="trust-title">INSURED &amp; CERTIFIED</p>
+              <p class="trust-desc">Every technician is fully certified and all work is covered.</p>
+            </div>
+          </article>
+          <article class="trust-item">
+            <div class="trust-icon">◷</div>
+            <div>
+              <p class="trust-title">ON-TIME GUARANTEE</p>
+              <p class="trust-desc">We respect your schedule. Arrive within the promised window, always.</p>
+            </div>
+          </article>
+          <article class="trust-item">
+            <div class="trust-icon">⇆</div>
+            <div>
+              <p class="trust-title">MOBILE OR IN-SHOP</p>
+              <p class="trust-desc">We come to you, or you visit our state-of-the-art facility.</p>
+            </div>
+          </article>
+          <article class="trust-item">
+            <div class="trust-icon">✓</div>
+            <div>
+              <p class="trust-title">SATISFACTION PROMISE</p>
+              <p class="trust-desc">Not happy? We re-detail at no extra charge, no questions asked.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="booking-form-card reveal-card">
+        <div class="booking-progress">
+          <div class="progress-head">
+            <span class="progress-step is-active" data-step-label="0">VEHICLE</span>
+            <span class="progress-step" data-step-label="1">SERVICE</span>
+            <span class="progress-step" data-step-label="2">DONE</span>
+          </div>
+          <div class="progress-line">
+            <div class="progress-fill" id="booking-progress-fill"></div>
+            <div class="progress-car" id="booking-progress-car">🚗</div>
+          </div>
+        </div>
+
+        <form class="booking-form" id="booking-form" novalidate>
+          <div class="booking-step is-visible" data-step="0">
+            <h3>YOUR DETAILS</h3>
+            <div class="form-grid">
+              <label class="field">
+                <span>FULL NAME</span>
+                <input type="text" name="name" placeholder="John Smith" required />
+              </label>
+              <label class="field">
+                <span>PHONE</span>
+                <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required />
+              </label>
+              <label class="field field-full">
+                <span>EMAIL</span>
+                <input type="email" name="email" placeholder="john@example.com" required />
+              </label>
+              <label class="field">
+                <span>MAKE</span>
+                <input type="text" name="make" placeholder="BMW" required />
+              </label>
+              <label class="field">
+                <span>MODEL</span>
+                <input type="text" name="model" placeholder="M4" required />
+              </label>
+              <label class="field field-full">
+                <span>YEAR</span>
+                <input type="text" name="year" placeholder="2023" required />
+              </label>
+            </div>
+            <button type="button" class="booking-btn primary" id="booking-next">CONTINUE</button>
+          </div>
+
+          <div class="booking-step" data-step="1">
+            <h3>SELECT SERVICE</h3>
+            <div class="service-options">
+              <label><input type="radio" name="service" value="Exterior Detailing" /> <span>Exterior Detailing</span></label>
+              <label><input type="radio" name="service" value="Paint Correction" /> <span>Paint Correction</span></label>
+              <label><input type="radio" name="service" value="Interior Detailing" /> <span>Interior Detailing</span></label>
+              <label><input type="radio" name="service" value="Ceramic Coating" /> <span>Ceramic Coating</span></label>
+              <label><input type="radio" name="service" value="PPF Installation" /> <span>PPF Installation</span></label>
+              <label><input type="radio" name="service" value="Full Elite Package" /> <span>Full Elite Package</span></label>
+              <label><input type="radio" name="service" value="Armor Package" /> <span>Armor Package</span></label>
+            </div>
+            <label class="field field-full">
+              <span>ADDITIONAL NOTES</span>
+              <textarea name="notes" rows="4" placeholder="Any specific concerns or requests..."></textarea>
+            </label>
+            <div class="booking-actions">
+              <button type="button" class="booking-btn secondary" id="booking-back">BACK</button>
+              <button type="submit" class="booking-btn primary">REQUEST QUOTE</button>
+            </div>
+          </div>
+
+          <div class="booking-step" data-step="2">
+            <div class="booking-success">
+              <div class="success-icon">✓</div>
+              <h3>WE'VE GOT YOU</h3>
+              <p>Your request is in. A ProShine specialist will reach out within 2 hours to confirm your appointment.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-cta">
+      <div class="footer-cta-overlay"></div>
+      <p class="footer-kicker">GET STARTED TODAY</p>
+      <h2 class="footer-title">READY TO SHINE?</h2>
+      <p class="footer-copy">Get your free quote in under 2 minutes. No commitment required.</p>
+      <button class="footer-cta-btn" data-scroll="#book-now">BOOK YOUR DETAIL — FREE QUOTE</button>
+    </div>
+
+    <div class="footer-main">
+      <div class="footer-brand">
+        <p class="footer-logo">PRO<span>SHINE</span></p>
+        <p class="footer-brand-copy">
+          The premier auto detailing studio. We set the standard for precision,
+          protection, and perfection on every vehicle we touch.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">SERVICES</p>
+        <ul>
+          <li><a href="#services">Exterior Detailing</a></li>
+          <li><a href="#services">Paint Correction</a></li>
+          <li><a href="#services">Interior Detailing</a></li>
+          <li><a href="#services">Ceramic Coating</a></li>
+          <li><a href="#services">Paint Protection Film</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <p class="footer-col-title">CONTACT</p>
+        <ul>
+          <li>hello@proshine.com</li>
+          <li>+1 (555) 200-0100</li>
+          <li>Mon to Sat: 8am to 6pm</li>
+          <li>Sunday: By Appointment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>2026 PROSHINE DETAIL. ALL RIGHTS RESERVED.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
